@@ -7,6 +7,6 @@ parts:
 - caption: Sea Level Indicators
   numbered: True
   chapters:
-  - file: SL_indicators/SL_magnitude
-  - file: SL_indicators/SL_FloodFrequency
+  - file: SL_indicators_NBs/SL_magnitude
+  - file: SL_indicators_NBs/SL_FloodFrequency
 
