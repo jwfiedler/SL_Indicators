@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.md
+parts:
+- caption: Sea Level Indicators
+  numbered: True
+  chapters:
+  - file: SL_indicators/SL_magnitude
+  - file: SL_indicators/SL_FloodFrequency
+
