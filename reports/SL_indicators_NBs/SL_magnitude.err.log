@@ -1,0 +1,63 @@
+Traceback (most recent call last):
+  File "/Users/juliafiedler/anaconda3/envs/SLindicators/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/juliafiedler/anaconda3/envs/SLindicators/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/juliafiedler/anaconda3/envs/SLindicators/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/juliafiedler/anaconda3/envs/SLindicators/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/juliafiedler/anaconda3/envs/SLindicators/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/juliafiedler/anaconda3/envs/SLindicators/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/juliafiedler/anaconda3/envs/SLindicators/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Set the style of the plot
+sns.set_style("whitegrid")
+
+# Create a color palette
+palette = sns.color_palette("Set1")
+
+# Plot the timeseries
+# Create the figure and the axes
+fig, ax = plt.subplots()
+# plot altimetry data
+ax.scatter(sla_nearest['time'], 100*sla_nearest, 
+           label='Altimetry', color=palette[0], alpha=0.2, s= 5)
+ax.plot(sla_nearest['time'], 100*trend_line_asl, 
+        label='Altimetry Trend', color=palette[0], linestyle='--')
+
+# plot tide gauge data
+ax.scatter(rsl_daily['time'], 100*rsl_daily, 
+           label='Tide Gauge', color=palette[1], alpha=0.2, s= 10)
+ax.plot(rsl_daily['time'], 100*trend_line_rsl, 
+        label='Tide Gauge Trend', color=palette[1], linestyle='--')
+
+# Set the title and labels
+ax.set_title(f'Altimetry ({lat_str}, {lon_str}) vs \n Tide Gauge ({station_name}) 
+             ({start_date_str} to {end_date_str})')
+ax.set_xlabel('Year')
+ax.set_ylabel('Height (cm, MHHW)')
+
+# Set the y limits
+ax.set_ylim([-40, 40])
+
+# Set the x limits
+ax.set_xlim([start_date, end_date])
+
+# Add a legend below the plot
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.15), ncol=2)
+
+glue("trend_fig", fig, display=False)
+------------------
+
+
+[0;36m  Cell [0;32mIn[26], line 23[0;36m[0m
+[0;31m    ax.set_title(f'Altimetry ({lat_str}, {lon_str}) vs \n Tide Gauge ({station_name})[0m
+[0m                                                                                      ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m EOL while scanning string literal
+
+
