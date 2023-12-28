@@ -1,0 +1,17 @@
+name: SLindicators
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - jupyter-book
+  - matplotlib
+  - docutils=0.17
+  - xarray
+  - netcdf4
+  - cartopy
+  - pydap
+  - lxml
+  - html5lib
+  - bs4
+  - seaborn
