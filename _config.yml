@@ -33,7 +33,16 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  use_edit_page_button: true
 
 # Parse and render settings
 parse:
   myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
+
+launch_buttons:
+  # Binder button
+  binderhub_url: "https://mybinder.org/v2/gh/jwfiedler/SL_Indicators/HEAD?labpath=SL_indicators_NBs%2FSL_magnitude.ipynb"  # The URL for your BinderHub deployment
+  binderhub_logo_url: "https://mybinder.org/static/images/logo.svg"  # Logo for your BinderHub deployment
+  binderhub_logo_inject: true  # Inject the logo defined above in the Binder button?
+  use_jupyter_lab: true  # Should the classic notebook interface be used, or JupyterLab?
+  thebe: true  # Should Binder/Thebe be enabled?
