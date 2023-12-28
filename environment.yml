@@ -3,15 +3,10 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.8
-  - jupyter-book
-  - matplotlib
-  - docutils=0.17
+  - python=3.9
   - xarray
-  - netcdf4
-  - cartopy
-  - pydap
-  - lxml
-  - html5lib
-  - bs4
+  - ipykernel
+  - scipy
   - seaborn
+  - cartopy
+  - jupyter-book
