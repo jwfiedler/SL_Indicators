@@ -440,24 +440,26 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">2.1. Setup</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-necessary-libraries">2.1.1. Import necessary libraries.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieve-the-tide-station-s-data-set-s">2.1.2. Retrieve the Tide Station(s) Data Set(s)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-datum-to-mhhw">2.1.3. Set the Datum to MHHW</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assess-station-data-quality-for-the-por-1983-2022">2.1.4. Assess Station Data Quality for the POR (1983-2022)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-epoch-for-the-flood-frequency-analysis">2.1.4.1. Identify epoch for the flood frequency analysis</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-the-data-from-calendar-year-to-storm-year">2.1.5. Adjust the data from calendar year to storm year</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-a-threshold">2.1.6. Assign a Threshold</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieve-the-tide-station-s-data-set-s">2.2. Retrieve the Tide Station(s) Data Set(s)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-datum-to-mhhw">2.2.1. Set the Datum to MHHW</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assess-station-data-quality-for-the-por-1983-2022">2.2.2. Assess Station Data Quality for the POR (1983-2022)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-epoch-for-the-flood-frequency-analysis">2.2.2.1. Identify epoch for the flood frequency analysis</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-and-plot-flood-frequency">2.2. Calculate and Plot Flood Frequency</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-flood-frequency-counts">2.2.1. Plot Flood Frequency Counts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-flood-duration">2.2.2. Plot Flood Duration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-the-data-from-calendar-year-to-storm-year">2.2.3. Adjust the data from calendar year to storm year</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-a-threshold">2.2.4. Assign a Threshold</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-percent-change-over-por-at-the-tide-station-for-both-frequency-and-duration">2.3. Calculate the percent change over POR at the tide station for both frequency and duration.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-map">2.4. Create a map</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">2.5. Citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-and-plot-flood-frequency">2.3. Calculate and Plot Flood Frequency</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-flood-frequency-counts">2.3.1. Plot Flood Frequency Counts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-flood-duration">2.3.2. Plot Flood Duration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-percent-change-over-por-at-the-tide-station-for-both-frequency-and-duration">2.4. Calculate the percent change over POR at the tide station for both frequency and duration.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-map">2.5. Create a map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">2.6. Citations</a></li>
 </ul>
             </nav>
         </div>
@@ -471,21 +473,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="minor-flood-frequency-and-duration">
 <h1><span class="section-number">2. </span>Minor Flood Frequency and Duration<a class="headerlink" href="#minor-flood-frequency-and-duration" title="Permalink to this heading">#</a></h1>
-<figure class="margin align-default">
-<img alt="../_images/516c1b77ddc03040bd55cca958253e1c7e2dbec685bbe31856543ae692d05551.png" src="../_images/516c1b77ddc03040bd55cca958253e1c7e2dbec685bbe31856543ae692d05551.png" />
-</figure>
 <div class="myclass1-myclass2 admonition important" id="appropriated">
 <p class="admonition-title">Important</p>
 <p>This file is taken from <a class="reference external" href="https://github.com/jpotemra/PCCM/blob/main/Chapter%205%3A%20Sea%20Level/Malakal_SL_FloodFrequency.ipynb">https://github.com/jpotemra/PCCM/blob/main/Chapter 5%3A Sea Level/Malakal_SL_FloodFrequency.ipynb</a> to demonstrate how it might work in a juptyer book context.
 It has been adapted (a lot).</p>
 </div>
 <p>Here we will plot two indicators concerning flooding at the Malakal tide gauge, after first taking a general look at the type of data we are able to plot from the UHSLC. These indicators are based on a ‘flooding’ threshold, using <a class="reference external" href="https://tidesandcurrents.noaa.gov/sltrends/faq.html">relative sea level</a>.</p>
-<p><em>Thoughts</em>:</p>
-<ol class="arabic simple">
-<li><p>Interactivity? There’s a launch button but I can disable it if we’d rather have this be static. (Can do it with binder.)</p></li>
-<li><p>Not sure about major structure here. Right now this notebook is in the Intra-Annual file, which doesn’t make any sense. But separating the annual and intra-annual seems like they’d be mostly the same…</p></li>
-<li><p>This should go on github soon, but who should primary ‘owner’ be? (Mine is currently under my ucsd address. No bueno.)</p></li>
-</ol>
+<p>Download Files:
+<span class="xref myst">Map</span> |
+<a class="reference download internal" download="" href="../_downloads/b6ef93868e21657ad682e9077180d8bc/SL_FloodFrequency_threshold_counts_days.png"><span class="xref download myst">Time Series Plot</span></a> |
+<span class="xref myst">Table</span></p>
 <section id="setup">
 <h2><span class="section-number">2.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <p>We first need to import the necessary libraries, access the data, and make a quick plot to ensure we will be analyzing the right thing.</p>
@@ -498,50 +495,498 @@ It has been adapted (a lot).</p>
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard libraries</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span> <span class="c1">#used for downloading files</span>
-<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span> <span class="c1">#used for figure numbering when exporting to LaTeX</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span> <span class="c1">#used for fitting distributions</span>
-<span class="kn">import</span> <span class="nn">requests</span> <span class="c1">#used for downloading files</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="c1">#for parsing html</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> <span class="c1">#for plotting</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Data manipulation libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="c1"># Data retrieval libraries</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+
+<span class="c1"># Data analysis libraries</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="c1"># HTML parsing library</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="c1"># Visualization libraries</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Miscellaneous</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>  <span class="c1"># used for figure numbering when exporting to LaTeX</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Next, we’ll establish our directory for saving and reading data, and our output files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">)</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../output&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we’ll establish some basic plotting rules for this notebook to keep everything looking uniform.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>  <span class="c1"># Set a default figure size for the notebook</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Set default resolution for inline figures</span>
+
+<span class="c1"># Set the default font size for axes labels, titles and ticks</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.titlesize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>  <span class="c1"># Set the font size for axes titles</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>  <span class="c1"># Set the font size for x and y labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># Set the font size for x-axis tick labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># Set the font size for y-axis tick labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span> <span class="c1"># Set the font size for the text in the figure (can affect legend)</span>
 </pre></div>
 </div>
 </div>
 </details>
 </div>
 </section>
+</section>
 <section id="retrieve-the-tide-station-s-data-set-s">
-<h3><span class="section-number">2.1.2. </span>Retrieve the Tide Station(s) Data Set(s)<a class="headerlink" href="#retrieve-the-tide-station-s-data-set-s" title="Permalink to this heading">#</a></h3>
-<p>#TODO: turn this section into a dropdown of available stations to pull from</p>
+<h2><span class="section-number">2.2. </span>Retrieve the Tide Station(s) Data Set(s)<a class="headerlink" href="#retrieve-the-tide-station-s-data-set-s" title="Permalink to this heading">#</a></h2>
 <p>Next, we’ll access data from the UHSLC. The Malakala tide gauge has the UHSLC ID: 7. We will import the netcdf file into our current data directory, and take a peek at the dataset. We will also import the datums for this location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uhslc_id</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;h</span><span class="si">{</span><span class="n">uhslc_id</span><span class="si">:</span><span class="s1">03</span><span class="si">}</span><span class="s1">.nc&#39;</span> <span class="c1"># h for hourly, d for daily</span>
-<span class="n">datadir</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span>
-<span class="n">url_rqds</span> <span class="o">=</span> <span class="s2">&quot;https://uhslc.soest.hawaii.edu/data/netcdf/rqds/pacific/hourly/&quot;</span> <span class="c1"># do we want fast? or rqds?</span>
-<span class="c1"># url_fast = &quot;https://uhslc.soest.hawaii.edu/data/netcdf/fast/hourly&quot;</span>
 
-<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datadir</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://uhslc.soest.hawaii.edu/data/netcdf/fast/hourly/&quot;</span> 
+
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="n">urlretrieve</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">url_rqds</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="n">path</span><span class="p">)</span> <span class="c1"># careful here with a/b on research quality data! Doesn&#39;t exist for fast data.</span>
+    <span class="n">urlretrieve</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">fname</span><span class="p">),</span> <span class="n">path</span><span class="p">)</span> 
 
     
-<span class="n">data_xr</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="n">data_xr</span>
-
-<span class="c1"># save the nc data to file</span>
-<span class="n">data_xr</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;h007b.nc&#39;</span><span class="p">)</span>
+<span class="n">rsl</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">station_name</span> <span class="o">=</span> <span class="n">rsl</span><span class="p">[</span><span class="s1">&#39;station_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">rsl</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:               (record_id: 1, time: 477345)
+Coordinates:
+  * time                  (time) datetime64[ns] 1969-05-18T15:00:00 ... 2023-...
+  * record_id             (record_id) int16 70
+Data variables:
+    sea_level             (record_id, time) float32 ...
+    lat                   (record_id) float32 ...
+    lon                   (record_id) float32 ...
+    station_name          (record_id) |S7 b&#x27;Malakal&#x27;
+    station_country       (record_id) |S5 ...
+    station_country_code  (record_id) float32 ...
+    uhslc_id              (record_id) int16 ...
+    gloss_id              (record_id) float32 ...
+    ssc_id                (record_id) |S4 ...
+    last_rq_date          (record_id) datetime64[ns] ...
+Attributes:
+    title:                  UHSLC Fast Delivery Tide Gauge Data (hourly)
+    ncei_template_version:  NCEI_NetCDF_TimeSeries_Orthogonal_Template_v2.0
+    featureType:            timeSeries
+    Conventions:            CF-1.6, ACDD-1.3
+    date_created:           2023-12-07T14:34:12Z
+    publisher_name:         University of Hawaii Sea Level Center (UHSLC)
+    publisher_email:        philiprt@hawaii.edu, markm@soest.hawaii.edu
+    publisher_url:          http://uhslc.soest.hawaii.edu
+    summary:                The UHSLC assembles and distributes the Fast Deli...
+    processing_level:       Fast Delivery (FD) data undergo a level 1 quality...
+    acknowledgment:         The UHSLC Fast Delivery database is supported by ...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-e8856d1a-da94-409b-b8a2-a808ea3384bc' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-e8856d1a-da94-409b-b8a2-a808ea3384bc' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>record_id</span>: 1</li><li><span class='xr-has-index'>time</span>: 477345</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-f90b2874-3f60-436e-a8fb-36f78f770080' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f90b2874-3f60-436e-a8fb-36f78f770080' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1969-05-18T15:00:00 ... 2023-10-...</div><input id='attrs-7e3bb09a-bf63-485e-9518-d727fd12fd0a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7e3bb09a-bf63-485e-9518-d727fd12fd0a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0cd28df1-a0ad-46ca-b8b9-ed163328cb46' class='xr-var-data-in' type='checkbox'><label for='data-0cd28df1-a0ad-46ca-b8b9-ed163328cb46' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1969-05-18T15:00:00.000000000&#x27;, &#x27;1969-05-18T16:00:00.028800000&#x27;,
+       &#x27;1969-05-18T16:59:59.971200000&#x27;, ..., &#x27;2023-10-31T21:00:00.000000000&#x27;,
+       &#x27;2023-10-31T22:00:00.028800000&#x27;, &#x27;2023-10-31T22:59:59.971200000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>record_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>70</div><input id='attrs-5b54dacb-1696-4f13-808d-78595d7aca4e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5b54dacb-1696-4f13-808d-78595d7aca4e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3e735b12-e155-409a-ab3c-0e78ca38a92c' class='xr-var-data-in' type='checkbox'><label for='data-3e735b12-e155-409a-ab3c-0e78ca38a92c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique identifier for each record (i.e., station and version) in the database</dd></dl></div><div class='xr-var-data'><pre>array([70], dtype=int16)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-324346bb-3f8c-4479-81d1-5339780bfcc1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-324346bb-3f8c-4479-81d1-5339780bfcc1' class='xr-section-summary' >Data variables: <span>(10)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>sea_level</span></div><div class='xr-var-dims'>(record_id, time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2018d75d-68ba-428a-a45e-1b53dc7be141' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2018d75d-68ba-428a-a45e-1b53dc7be141' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-295e93be-1b61-413c-a453-a7fff9414925' class='xr-var-data-in' type='checkbox'><label for='data-295e93be-1b61-413c-a453-a7fff9414925' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>relative sea level</dd><dt><span>units :</span></dt><dd>millimeters</dd><dt><span>source :</span></dt><dd>in situ tide gauge water level observations</dd><dt><span>platform :</span></dt><dd>station_name, station_country, station_country_code, uhslc_id, gloss_id, ssc_id</dd></dl></div><div class='xr-var-data'><pre>[477345 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-54db3425-69d7-4776-917d-cbba76374ac9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-54db3425-69d7-4776-917d-cbba76374ac9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-280e2462-74dd-4995-8cc4-ff997ec0aa39' class='xr-var-data-in' type='checkbox'><label for='data-280e2462-74dd-4995-8cc4-ff997ec0aa39' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>valid_min :</span></dt><dd>-90</dd><dt><span>valid_max :</span></dt><dd>90</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1a12d164-9c04-4aaf-9257-0bc09e2d58c4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1a12d164-9c04-4aaf-9257-0bc09e2d58c4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c45ecb2f-694d-48f5-bf23-b15c4b66ad31' class='xr-var-data-in' type='checkbox'><label for='data-c45ecb2f-694d-48f5-bf23-b15c4b66ad31' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>360</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_name</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S7</div><div class='xr-var-preview xr-preview'>b&#x27;Malakal&#x27;</div><input id='attrs-ccb2a4eb-eea6-49dc-ace8-d7c4d9e7d580' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ccb2a4eb-eea6-49dc-ace8-d7c4d9e7d580' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-88e2695f-ea1c-4426-b8ea-d6b858fd62f9' class='xr-var-data-in' type='checkbox'><label for='data-88e2695f-ea1c-4426-b8ea-d6b858fd62f9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station name</dd></dl></div><div class='xr-var-data'><pre>array([b&#x27;Malakal&#x27;], dtype=&#x27;|S7&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S5</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-93cb6eb8-32a5-45be-b826-b2750c400e4b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-93cb6eb8-32a5-45be-b826-b2750c400e4b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ba982c20-7c50-4314-af3f-ac41615319e6' class='xr-var-data-in' type='checkbox'><label for='data-ba982c20-7c50-4314-af3f-ac41615319e6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country (ISO 3166-1)</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=|S5]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country_code</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-33b73b47-add2-4d5f-9079-7ec74aa4ad58' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-33b73b47-add2-4d5f-9079-7ec74aa4ad58' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e1113f09-5426-48ef-acd4-70da1689b203' class='xr-var-data-in' type='checkbox'><label for='data-e1113f09-5426-48ef-acd4-70da1689b203' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country code (ISO 3166-1 numeric)</dd><dt><span>comment :</span></dt><dd>These are 3-digit country codes (e.g., 003) stored as integers.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>uhslc_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-43107065-9698-45bb-b826-6c49f85e19f5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-43107065-9698-45bb-b826-6c49f85e19f5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5334e5ea-56eb-4d8e-be43-4d704678e96a' class='xr-var-data-in' type='checkbox'><label for='data-5334e5ea-56eb-4d8e-be43-4d704678e96a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the University of Hawaii Sea Level Center (UHSLC)</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gloss_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7d2227ea-8338-40be-9dbb-32c739ca0f7e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7d2227ea-8338-40be-9dbb-32c739ca0f7e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bc9507c6-94bc-47a5-bde2-c64169b9b354' class='xr-var-data-in' type='checkbox'><label for='data-bc9507c6-94bc-47a5-bde2-c64169b9b354' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the WMO/IOC Global Sea Level Observing System (GLOSS)</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ssc_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S4</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d3f20502-8fdc-4b36-a98d-a3d7327fc29e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d3f20502-8fdc-4b36-a98d-a3d7327fc29e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e569d43f-6670-45d6-bc79-8d0f37839cf6' class='xr-var-data-in' type='checkbox'><label for='data-e569d43f-6670-45d6-bc79-8d0f37839cf6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID code in the Sealevel Station Catalog (SSC) produced by the WMO/IOC Sea Level Monitoring Facility (VLIZ)</dd><dt><span>comment :</span></dt><dd>Note that SSC IDs vary in length. The IDs are padded with space characters to produce the retangular character matrix provided here.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=|S4]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>last_rq_date</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e0dddf0d-3f04-438b-a5b7-10b82d58f606' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e0dddf0d-3f04-438b-a5b7-10b82d58f606' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-927ce98e-c889-4dbb-8bde-7dab3e9875e2' class='xr-var-data-in' type='checkbox'><label for='data-927ce98e-c889-4dbb-8bde-7dab3e9875e2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>date of last Research Quality sea level value</dd><dt><span>comment :</span></dt><dd>Values in last_rq_date correspond to an identical value in the time vector. Dates less than or equal to last_rq_date for a given station correspond to Research Quality (RQ) data. Dates after last_rq_date correspond to Fast Delivery (FD) data. Missing values indicate no RQ data for a station.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=datetime64[ns]]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-4810f4bc-4d9f-465c-be39-ebbb5ababe61' class='xr-section-summary-in' type='checkbox'  ><label for='section-4810f4bc-4d9f-465c-be39-ebbb5ababe61' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-b3c6a8c5-112e-4eef-9953-6489424b480e' class='xr-index-data-in' type='checkbox'/><label for='index-b3c6a8c5-112e-4eef-9953-6489424b480e' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([       &#x27;1969-05-18 15:00:00&#x27;, &#x27;1969-05-18 16:00:00.028800&#x27;,
+               &#x27;1969-05-18 16:59:59.971200&#x27;,        &#x27;1969-05-18 18:00:00&#x27;,
+               &#x27;1969-05-18 19:00:00.028800&#x27;, &#x27;1969-05-18 19:59:59.971200&#x27;,
+                      &#x27;1969-05-18 21:00:00&#x27;, &#x27;1969-05-18 22:00:00.028800&#x27;,
+               &#x27;1969-05-18 22:59:59.971200&#x27;,        &#x27;1969-05-19 00:00:00&#x27;,
+               ...
+               &#x27;2023-10-31 13:59:59.971200&#x27;,        &#x27;2023-10-31 15:00:00&#x27;,
+               &#x27;2023-10-31 16:00:00.028800&#x27;, &#x27;2023-10-31 16:59:59.971200&#x27;,
+                      &#x27;2023-10-31 18:00:00&#x27;, &#x27;2023-10-31 19:00:00.028800&#x27;,
+               &#x27;2023-10-31 19:59:59.971200&#x27;,        &#x27;2023-10-31 21:00:00&#x27;,
+               &#x27;2023-10-31 22:00:00.028800&#x27;, &#x27;2023-10-31 22:59:59.971200&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=477345, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>record_id</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-c283a49b-d049-4df3-8fa7-52c56b210eee' class='xr-index-data-in' type='checkbox'/><label for='index-c283a49b-d049-4df3-8fa7-52c56b210eee' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([70], dtype=&#x27;int16&#x27;, name=&#x27;record_id&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9b4c9c2b-58fd-45d4-a9b2-a3dd2d98166a' class='xr-section-summary-in' type='checkbox'  ><label for='section-9b4c9c2b-58fd-45d4-a9b2-a3dd2d98166a' class='xr-section-summary' >Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>UHSLC Fast Delivery Tide Gauge Data (hourly)</dd><dt><span>ncei_template_version :</span></dt><dd>NCEI_NetCDF_TimeSeries_Orthogonal_Template_v2.0</dd><dt><span>featureType :</span></dt><dd>timeSeries</dd><dt><span>Conventions :</span></dt><dd>CF-1.6, ACDD-1.3</dd><dt><span>date_created :</span></dt><dd>2023-12-07T14:34:12Z</dd><dt><span>publisher_name :</span></dt><dd>University of Hawaii Sea Level Center (UHSLC)</dd><dt><span>publisher_email :</span></dt><dd>philiprt@hawaii.edu, markm@soest.hawaii.edu</dd><dt><span>publisher_url :</span></dt><dd>http://uhslc.soest.hawaii.edu</dd><dt><span>summary :</span></dt><dd>The UHSLC assembles and distributes the Fast Delivery (FD) dataset of hourly- and daily-averaged tide gauge water-level observations. Tide gauge operators, or data creators, provide FD data to UHSLC after a level 1 quality assessment (see processing_level attribute). The UHSLC provides an independent quality assessment of the time series and makes FD data available within 4-6 weeks of collection. This is a &quot;fast&quot; turnaround time compared to Research Quality (RQ) data, which are available on an annual cycle after a level 2 quality assessment. RQ data replace FD data in the data stream as the former becomes available. This file contains hybrid time series composed of RQ data when available with FD data appended to the end of each RQ series.</dd><dt><span>processing_level :</span></dt><dd>Fast Delivery (FD) data undergo a level 1 quality assessment (e.g., unit and timing evaluation, outlier detection, combination of multiple channels into a primary channel, etc.). In this file, FD data are appended to Research Quality (RQ) data that have received a level 2 quality assessment (e.g., tide gauge datum evaluation, assessment of level ties to tide gauge benchmarks, comparison with nearby stations, etc.).</dd><dt><span>acknowledgment :</span></dt><dd>The UHSLC Fast Delivery database is supported by the National Oceanic and Atmospheric Administration (NOAA) Office of Climate Observations (OCO).</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>and we’ll save a few variables that will come up later for report generation.</p>
 <div class="cell tag_hide-input docutils container">
@@ -551,10 +996,10 @@ It has been adapted (a lot).</p>
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">station</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_xr</span><span class="o">.</span><span class="n">station_name</span><span class="o">.</span><span class="n">values</span><span class="p">)[</span><span class="mi">3</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
-<span class="n">country</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_xr</span><span class="o">.</span><span class="n">station_country</span><span class="o">.</span><span class="n">values</span><span class="p">)[</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
-<span class="n">startDateTime</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_xr</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])[:</span><span class="mi">10</span><span class="p">]</span>
-<span class="n">endDateTime</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_xr</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[:</span><span class="mi">10</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">station</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">rsl</span><span class="o">.</span><span class="n">station_name</span><span class="o">.</span><span class="n">values</span><span class="p">)[</span><span class="mi">3</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">country</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">rsl</span><span class="o">.</span><span class="n">station_country</span><span class="o">.</span><span class="n">values</span><span class="p">)[</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">startDateTime</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">rsl</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">endDateTime</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">rsl</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[:</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;station&quot;</span><span class="p">,</span><span class="n">station</span><span class="p">,</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;country&quot;</span><span class="p">,</span><span class="n">country</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;startDateTime&quot;</span><span class="p">,</span><span class="n">startDateTime</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -564,9 +1009,8 @@ It has been adapted (a lot).</p>
 </div>
 </details>
 </div>
-</section>
 <section id="set-the-datum-to-mhhw">
-<h3><span class="section-number">2.1.3. </span>Set the Datum to MHHW<a class="headerlink" href="#set-the-datum-to-mhhw" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.2.1. </span>Set the Datum to MHHW<a class="headerlink" href="#set-the-datum-to-mhhw" title="Permalink to this heading">#</a></h3>
 <aside class="margin sidebar">
 <p class="sidebar-title">A Note on Datums</p>
 <p>The sea level variable in the netcdf file is sea level <strong>relative to the station datum</strong>. For more information on the data processing of this gauge, see the <a class="reference external" href="https://uhslc.soest.hawaii.edu/rqds/pacific/doc/qa007b.dmt">station metdata</a>.</p>
@@ -584,12 +1028,12 @@ It has been adapted (a lot).</p>
 <span class="c1"># make sure datum is a float64</span>
 <span class="n">datum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
 
-<span class="n">data_xr</span><span class="p">[</span><span class="s1">&#39;datum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datum</span><span class="o">*</span><span class="mi">1000</span> <span class="c1"># convert to mm</span>
-<span class="n">data_xr</span><span class="p">[</span><span class="s1">&#39;sea_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_xr</span><span class="p">[</span><span class="s1">&#39;sea_level&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">data_xr</span><span class="p">[</span><span class="s1">&#39;datum&#39;</span><span class="p">]</span>
+<span class="n">rsl</span><span class="p">[</span><span class="s1">&#39;datum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datum</span><span class="o">*</span><span class="mi">1000</span> <span class="c1"># convert to mm</span>
+<span class="n">rsl</span><span class="p">[</span><span class="s1">&#39;sea_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rsl</span><span class="p">[</span><span class="s1">&#39;sea_level&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">rsl</span><span class="p">[</span><span class="s1">&#39;datum&#39;</span><span class="p">]</span>
 
 <span class="c1"># assign units to datum and sea level</span>
-<span class="n">data_xr</span><span class="p">[</span><span class="s1">&#39;datum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mm&#39;</span>
-<span class="n">data_xr</span><span class="p">[</span><span class="s1">&#39;sea_level&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mm&#39;</span>
+<span class="n">rsl</span><span class="p">[</span><span class="s1">&#39;datum&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mm&#39;</span>
+<span class="n">rsl</span><span class="p">[</span><span class="s1">&#39;sea_level&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mm&#39;</span>
 
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;datum&quot;</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;datumname&quot;</span><span class="p">,</span> <span class="n">datumname</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -791,7 +1235,7 @@ It has been adapted (a lot).</p>
 </div>
 </section>
 <section id="assess-station-data-quality-for-the-por-1983-2022">
-<h3><span class="section-number">2.1.4. </span>Assess Station Data Quality for the POR (1983-2022)<a class="headerlink" href="#assess-station-data-quality-for-the-por-1983-2022" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.2.2. </span>Assess Station Data Quality for the POR (1983-2022)<a class="headerlink" href="#assess-station-data-quality-for-the-por-1983-2022" title="Permalink to this heading">#</a></h3>
 <p>To do this, we’ll plot all the sea level data to make sure our data looks correct, and then we’ll truncate the data set to the time period of record (POR).</p>
 <aside class="margin sidebar">
 <p class="sidebar-title">Watch the units!</p>
@@ -802,11 +1246,11 @@ It has been adapted (a lot).</p>
 </aside>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_xr</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">data_xr</span><span class="o">.</span><span class="n">sea_level</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">values</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rsl</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">rsl</span><span class="o">.</span><span class="n">sea_level</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">values</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sea Level (cm, </span><span class="si">{</span><span class="n">datumname</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span> <span class="c1">#divide by 10 to convert to cm</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sea Level (cm, </span><span class="si">{</span><span class="n">datumname</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span> <span class="c1">#divide by 10 to convert to cm</span>
 </pre></div>
 </div>
 </div>
@@ -819,12 +1263,12 @@ It has been adapted (a lot).</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Sea Level (cm, MHHW)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/fc094dca20114c684bfa1dc8603ec7dc4826623a4931d444dd67e44a35e6020f.png" src="../_images/fc094dca20114c684bfa1dc8603ec7dc4826623a4931d444dd67e44a35e6020f.png" />
+<img alt="../_images/f2aa67d05e4a9d84e47dcc1c1c9657f4efba709ddf8b104f9cca2b7f6e5adb4c.png" src="../_images/f2aa67d05e4a9d84e47dcc1c1c9657f4efba709ddf8b104f9cca2b7f6e5adb4c.png" />
 </div>
 </details>
 </div>
 <section id="identify-epoch-for-the-flood-frequency-analysis">
-<h4><span class="section-number">2.1.4.1. </span>Identify epoch for the flood frequency analysis<a class="headerlink" href="#identify-epoch-for-the-flood-frequency-analysis" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">2.2.2.1. </span>Identify epoch for the flood frequency analysis<a class="headerlink" href="#identify-epoch-for-the-flood-frequency-analysis" title="Permalink to this heading">#</a></h4>
 <p>Now, we’ll calculate trend starting from the beginning of the tidal datum analysis period epoch to the last time processed. The  epoch information is given in the datums table.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -841,11 +1285,11 @@ It has been adapted (a lot).</p>
 <span class="c1"># convert to datetime object</span>
 <span class="n">epoch_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">epoch_end</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">-%b-%Y&#39;</span><span class="p">)</span>
 
-<span class="n">hourly_data</span> <span class="o">=</span> <span class="n">data_xr</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">epoch_start</span><span class="p">,</span> <span class="n">epoch_end</span><span class="p">)))</span>
+<span class="n">hourly_data</span> <span class="o">=</span> <span class="n">rsl</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">epoch_start</span><span class="p">,</span> <span class="n">epoch_end</span><span class="p">)))</span>
 <span class="n">hourly_data</span>
 
-<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;startEpochDateTime&quot;</span><span class="p">,</span><span class="n">epoch_start</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;endEpochDateTime&quot;</span><span class="p">,</span><span class="n">epoch_end</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;startEpochDateTime&quot;</span><span class="p">,</span><span class="n">epoch_start</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;endEpochDateTime&quot;</span><span class="p">,</span><span class="n">epoch_end</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -853,22 +1297,22 @@ It has been adapted (a lot).</p>
 <p>and plot the hourly time series</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hourly_data</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">hourly_data</span><span class="o">.</span><span class="n">sea_level</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">values</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#divide by 10 to convert to cm</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sea Level (cm, </span><span class="si">{</span><span class="n">datumname</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sea Level (cm, </span><span class="si">{</span><span class="n">datumname</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
 
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;TS_full_fig&quot;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span><span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9cc416f7b82fe29e3c3c46d7c56d7dcfa0803802660666629a2fd8dee123c6d8.png" src="../_images/9cc416f7b82fe29e3c3c46d7c56d7dcfa0803802660666629a2fd8dee123c6d8.png" />
+<img alt="../_images/a62cff3b63a956a0e1c1b4781341e98a1d89c356d1726e01ecfefefdb504ee91.png" src="../_images/a62cff3b63a956a0e1c1b4781341e98a1d89c356d1726e01ecfefefdb504ee91.png" />
 </div>
 </div>
 <figure class="align-default" id="fig-ts-full">
-<img alt="../_images/9cc416f7b82fe29e3c3c46d7c56d7dcfa0803802660666629a2fd8dee123c6d8.png" src="../_images/9cc416f7b82fe29e3c3c46d7c56d7dcfa0803802660666629a2fd8dee123c6d8.png" />
+<img alt="../_images/a62cff3b63a956a0e1c1b4781341e98a1d89c356d1726e01ecfefefdb504ee91.png" src="../_images/a62cff3b63a956a0e1c1b4781341e98a1d89c356d1726e01ecfefefdb504ee91.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Full time series at <span class="pasted-text">Malakal</span>,<span class="pasted-text">Palau</span> tide gauge for the entire record from <span class="pasted-text">1969-05-18</span> to <span class="pasted-text">2023-10-31</span>. Note that the sea level is plotted in units of cm, relative to <span class="pasted-text">MHHW</span>.</span><a class="headerlink" href="#fig-ts-full" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -876,7 +1320,7 @@ It has been adapted (a lot).</p>
 </section>
 </section>
 <section id="adjust-the-data-from-calendar-year-to-storm-year">
-<h3><span class="section-number">2.1.5. </span>Adjust the data from calendar year to storm year<a class="headerlink" href="#adjust-the-data-from-calendar-year-to-storm-year" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.2.3. </span>Adjust the data from calendar year to storm year<a class="headerlink" href="#adjust-the-data-from-calendar-year-to-storm-year" title="Permalink to this heading">#</a></h3>
 <p>Storm year goes from May-April. Need to consult with Ayesha about this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -902,7 +1346,7 @@ It has been adapted (a lot).</p>
 </div>
 </section>
 <section id="assign-a-threshold">
-<h3><span class="section-number">2.1.6. </span>Assign a Threshold<a class="headerlink" href="#assign-a-threshold" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.2.4. </span>Assign a Threshold<a class="headerlink" href="#assign-a-threshold" title="Permalink to this heading">#</a></h3>
 <p>The threshold used here to determine a flood event is 30 cm above MHHW.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1307,10 +1751,10 @@ Attributes:
     publisher_url:          http://uhslc.soest.hawaii.edu
     summary:                The UHSLC assembles and distributes the Fast Deli...
     processing_level:       Fast Delivery (FD) data undergo a level 1 quality...
-    acknowledgment:         The UHSLC Fast Delivery database is supported by ...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-01747e5a-3879-4634-894a-68923c9fc49c' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-01747e5a-3879-4634-894a-68923c9fc49c' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>record_id</span>: 1</li><li><span class='xr-has-index'>time</span>: 349489</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-b0f6b97c-3616-422c-a83b-feaabf6f9067' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b0f6b97c-3616-422c-a83b-feaabf6f9067' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1983-01-01 ... 2022-11-14</div><input id='attrs-e8b33c72-ddde-4956-8b08-884bb16c3a3d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e8b33c72-ddde-4956-8b08-884bb16c3a3d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b9e755d-a9d6-4eb7-a3cb-32e3dbbdd873' class='xr-var-data-in' type='checkbox'><label for='data-6b9e755d-a9d6-4eb7-a3cb-32e3dbbdd873' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1983-01-01T00:00:00.000000000&#x27;, &#x27;1983-01-01T01:00:00.028800000&#x27;,
+    acknowledgment:         The UHSLC Fast Delivery database is supported by ...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-0b37cd1e-7c11-46db-8aa8-b957668af6f2' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0b37cd1e-7c11-46db-8aa8-b957668af6f2' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>record_id</span>: 1</li><li><span class='xr-has-index'>time</span>: 349489</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-f37c25ff-b129-4de1-9c3e-b8fc8f38cb8d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f37c25ff-b129-4de1-9c3e-b8fc8f38cb8d' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1983-01-01 ... 2022-11-14</div><input id='attrs-c5a65429-2ad3-4fc9-b882-0f3b7f09004b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c5a65429-2ad3-4fc9-b882-0f3b7f09004b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ad03ac4b-c4bc-4d4e-9124-6443cdc6f9e3' class='xr-var-data-in' type='checkbox'><label for='data-ad03ac4b-c4bc-4d4e-9124-6443cdc6f9e3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1983-01-01T00:00:00.000000000&#x27;, &#x27;1983-01-01T01:00:00.028800000&#x27;,
        &#x27;1983-01-01T01:59:59.971200000&#x27;, ..., &#x27;2022-11-13T22:00:00.028800000&#x27;,
        &#x27;2022-11-13T22:59:59.971200000&#x27;, &#x27;2022-11-14T00:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>record_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>70</div><input id='attrs-58e9f4b1-9a20-46f1-bf6e-3192467e75eb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-58e9f4b1-9a20-46f1-bf6e-3192467e75eb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-58c95201-36cb-496c-bfa6-ed30c5712b13' class='xr-var-data-in' type='checkbox'><label for='data-58c95201-36cb-496c-bfa6-ed30c5712b13' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique identifier for each record (i.e., station and version) in the database</dd></dl></div><div class='xr-var-data'><pre>array([70], dtype=int16)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b5447312-1449-4f29-8fc7-cca96988fc4f' class='xr-section-summary-in' type='checkbox'  ><label for='section-b5447312-1449-4f29-8fc7-cca96988fc4f' class='xr-section-summary' >Data variables: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>sea_level</span></div><div class='xr-var-dims'>(record_id, time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-251.0 -401.0 ... -623.0 -373.0</div><input id='attrs-867b29f0-c1ac-4282-b5a4-a1ffe7182cec' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-867b29f0-c1ac-4282-b5a4-a1ffe7182cec' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2f7cab79-cc8a-4ba6-82e6-caa32a7effbe' class='xr-var-data-in' type='checkbox'><label for='data-2f7cab79-cc8a-4ba6-82e6-caa32a7effbe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>mm</dd></dl></div><div class='xr-var-data'><pre>array([[-251., -401., -650., ..., -895., -623., -373.]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1b6b8d6c-939a-491d-9ee3-1027771703d1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1b6b8d6c-939a-491d-9ee3-1027771703d1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-84cc16f0-eedc-42a6-8437-6bafe83aeb07' class='xr-var-data-in' type='checkbox'><label for='data-84cc16f0-eedc-42a6-8437-6bafe83aeb07' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>valid_min :</span></dt><dd>-90</dd><dt><span>valid_max :</span></dt><dd>90</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6d5aa36e-c04e-486f-b867-d800fd0c4115' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6d5aa36e-c04e-486f-b867-d800fd0c4115' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-14e7622a-548c-4d17-9a88-82512259c70d' class='xr-var-data-in' type='checkbox'><label for='data-14e7622a-548c-4d17-9a88-82512259c70d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>360</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_name</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S7</div><div class='xr-var-preview xr-preview'>b&#x27;Malakal&#x27;</div><input id='attrs-89a60253-3894-4f16-a3a7-d426f23d6bcd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-89a60253-3894-4f16-a3a7-d426f23d6bcd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5908643f-200f-4a57-9edf-50e0624ab5c3' class='xr-var-data-in' type='checkbox'><label for='data-5908643f-200f-4a57-9edf-50e0624ab5c3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station name</dd></dl></div><div class='xr-var-data'><pre>array([b&#x27;Malakal&#x27;], dtype=&#x27;|S7&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S5</div><div class='xr-var-preview xr-preview'>b&#x27;Palau&#x27;</div><input id='attrs-d9a58ce5-2c50-4f5a-bb72-5fb8d4aaec95' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d9a58ce5-2c50-4f5a-bb72-5fb8d4aaec95' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f215dea4-1a30-4da2-873f-427363b96570' class='xr-var-data-in' type='checkbox'><label for='data-f215dea4-1a30-4da2-873f-427363b96570' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country (ISO 3166-1)</dd></dl></div><div class='xr-var-data'><pre>array([b&#x27;Palau&#x27;], dtype=&#x27;|S5&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country_code</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ef060ab4-7853-40ce-b3ee-ceac7eb8eb61' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ef060ab4-7853-40ce-b3ee-ceac7eb8eb61' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-62444790-9fb9-4134-8c71-36af27663223' class='xr-var-data-in' type='checkbox'><label for='data-62444790-9fb9-4134-8c71-36af27663223' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country code (ISO 3166-1 numeric)</dd><dt><span>comment :</span></dt><dd>These are 3-digit country codes (e.g., 003) stored as integers.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>uhslc_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-18e8883a-7ff4-42fe-8abe-98cb819d25ae' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-18e8883a-7ff4-42fe-8abe-98cb819d25ae' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c07614dc-8e4b-4ad6-8085-f59f033e7050' class='xr-var-data-in' type='checkbox'><label for='data-c07614dc-8e4b-4ad6-8085-f59f033e7050' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the University of Hawaii Sea Level Center (UHSLC)</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gloss_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c8266cbf-1add-4360-87a8-9ccdd497aac6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c8266cbf-1add-4360-87a8-9ccdd497aac6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6122f05e-6009-4002-90fc-ddd1dfaae364' class='xr-var-data-in' type='checkbox'><label for='data-6122f05e-6009-4002-90fc-ddd1dfaae364' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the WMO/IOC Global Sea Level Observing System (GLOSS)</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ssc_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S4</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-25f0b525-8708-488a-ae7b-68e7e724d382' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-25f0b525-8708-488a-ae7b-68e7e724d382' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fee01e69-f7d6-4365-a5c8-bac70ace93b8' class='xr-var-data-in' type='checkbox'><label for='data-fee01e69-f7d6-4365-a5c8-bac70ace93b8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID code in the Sealevel Station Catalog (SSC) produced by the WMO/IOC Sea Level Monitoring Facility (VLIZ)</dd><dt><span>comment :</span></dt><dd>Note that SSC IDs vary in length. The IDs are padded with space characters to produce the retangular character matrix provided here.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=|S4]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>last_rq_date</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7b5b71c9-0d2d-4951-a353-2b4d86518388' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7b5b71c9-0d2d-4951-a353-2b4d86518388' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4e9b496c-b135-4636-bd6e-3bdd9c3916c5' class='xr-var-data-in' type='checkbox'><label for='data-4e9b496c-b135-4636-bd6e-3bdd9c3916c5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>date of last Research Quality sea level value</dd><dt><span>comment :</span></dt><dd>Values in last_rq_date correspond to an identical value in the time vector. Dates less than or equal to last_rq_date for a given station correspond to Research Quality (RQ) data. Dates after last_rq_date correspond to Fast Delivery (FD) data. Missing values indicate no RQ data for a station.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=datetime64[ns]]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>datum</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.162e+03</div><input id='attrs-29a7046b-2ca8-49eb-b99d-4491c0d822ef' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-29a7046b-2ca8-49eb-b99d-4491c0d822ef' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aba38fa6-567e-4f8b-a2e1-cd3e8a395bf0' class='xr-var-data-in' type='checkbox'><label for='data-aba38fa6-567e-4f8b-a2e1-cd3e8a395bf0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>mm</dd></dl></div><div class='xr-var-data'><pre>array(2162.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>day</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 1 1 1 1 1 ... 317 317 317 317 318</div><input id='attrs-0565f489-0546-4515-b374-4edf79065be7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0565f489-0546-4515-b374-4edf79065be7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3b137841-248f-4a8e-8782-123b6210b20b' class='xr-var-data-in' type='checkbox'><label for='data-3b137841-248f-4a8e-8782-123b6210b20b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  1,   1,   1, ..., 317, 317, 318])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>month</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 1 1 1 1 1 1 ... 11 11 11 11 11 11</div><input id='attrs-be520a6d-6741-4b56-8a7c-21c612a0bdd8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-be520a6d-6741-4b56-8a7c-21c612a0bdd8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fd672dc3-6ce0-4c2c-8d7b-42d6e3458fb9' class='xr-var-data-in' type='checkbox'><label for='data-fd672dc3-6ce0-4c2c-8d7b-42d6e3458fb9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 1,  1,  1, ..., 11, 11, 11])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>year</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1983 1983 1983 ... 2022 2022 2022</div><input id='attrs-a96e16be-4a4b-41f2-a398-cd343ee14c40' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a96e16be-4a4b-41f2-a398-cd343ee14c40' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cdcb29f2-24f3-4e85-a9df-920e49c4aa54' class='xr-var-data-in' type='checkbox'><label for='data-cdcb29f2-24f3-4e85-a9df-920e49c4aa54' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1983, 1983, 1983, ..., 2022, 2022, 2022])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>year_storm</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1982 1982 1982 ... 2022 2022 2022</div><input id='attrs-0c15faca-a61d-4e27-9552-85345f1f6e71' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0c15faca-a61d-4e27-9552-85345f1f6e71' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c191d928-da72-4168-91a4-24c46fef29f0' class='xr-var-data-in' type='checkbox'><label for='data-c191d928-da72-4168-91a4-24c46fef29f0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1982, 1982, 1982, ..., 2022, 2022, 2022])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-74c8089d-9163-4178-8793-493093a12af2' class='xr-section-summary-in' type='checkbox'  ><label for='section-74c8089d-9163-4178-8793-493093a12af2' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-76f7fe8a-3c83-421d-9c64-6ed6fc6cc690' class='xr-index-data-in' type='checkbox'/><label for='index-76f7fe8a-3c83-421d-9c64-6ed6fc6cc690' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([       &#x27;1983-01-01 00:00:00&#x27;, &#x27;1983-01-01 01:00:00.028800&#x27;,
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>record_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>70</div><input id='attrs-4cb15484-5117-48fa-8b4d-cef043691e65' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4cb15484-5117-48fa-8b4d-cef043691e65' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a7315715-cca0-4db3-8abe-9f77a29635ac' class='xr-var-data-in' type='checkbox'><label for='data-a7315715-cca0-4db3-8abe-9f77a29635ac' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique identifier for each record (i.e., station and version) in the database</dd></dl></div><div class='xr-var-data'><pre>array([70], dtype=int16)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-977e0ad7-327c-4e92-b11b-4e9ab798ef0f' class='xr-section-summary-in' type='checkbox'  ><label for='section-977e0ad7-327c-4e92-b11b-4e9ab798ef0f' class='xr-section-summary' >Data variables: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>sea_level</span></div><div class='xr-var-dims'>(record_id, time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-251.0 -401.0 ... -623.0 -373.0</div><input id='attrs-9118a78a-998c-41f2-806f-9d0a4ff4d2ab' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9118a78a-998c-41f2-806f-9d0a4ff4d2ab' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b8425dfd-63c9-430a-874f-03e13721c15b' class='xr-var-data-in' type='checkbox'><label for='data-b8425dfd-63c9-430a-874f-03e13721c15b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>mm</dd></dl></div><div class='xr-var-data'><pre>array([[-251., -401., -650., ..., -895., -623., -373.]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c619eab9-4605-4b73-9b68-2d145a1b0886' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c619eab9-4605-4b73-9b68-2d145a1b0886' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ce27cb99-2401-40d3-9612-087b2ca70c29' class='xr-var-data-in' type='checkbox'><label for='data-ce27cb99-2401-40d3-9612-087b2ca70c29' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>valid_min :</span></dt><dd>-90</dd><dt><span>valid_max :</span></dt><dd>90</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-af357b8b-7487-4358-995a-248c5099f860' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-af357b8b-7487-4358-995a-248c5099f860' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-94c385b1-7411-4729-bf22-6495a2a48ffc' class='xr-var-data-in' type='checkbox'><label for='data-94c385b1-7411-4729-bf22-6495a2a48ffc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>360</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_name</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S7</div><div class='xr-var-preview xr-preview'>b&#x27;Malakal&#x27;</div><input id='attrs-14f7c863-d997-4ca7-80af-1a9674f16484' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-14f7c863-d997-4ca7-80af-1a9674f16484' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-535f5958-25fb-4e5a-a018-e375bd1f8377' class='xr-var-data-in' type='checkbox'><label for='data-535f5958-25fb-4e5a-a018-e375bd1f8377' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station name</dd></dl></div><div class='xr-var-data'><pre>array([b&#x27;Malakal&#x27;], dtype=&#x27;|S7&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S5</div><div class='xr-var-preview xr-preview'>b&#x27;Palau&#x27;</div><input id='attrs-f1ceee9d-4b3a-45ea-ba77-9e268ed00d63' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f1ceee9d-4b3a-45ea-ba77-9e268ed00d63' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-20c31034-be4d-4fb1-b72b-08562023cea9' class='xr-var-data-in' type='checkbox'><label for='data-20c31034-be4d-4fb1-b72b-08562023cea9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country (ISO 3166-1)</dd></dl></div><div class='xr-var-data'><pre>array([b&#x27;Palau&#x27;], dtype=&#x27;|S5&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country_code</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6274510d-b3d7-4bf0-aaa3-edb5f885519a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6274510d-b3d7-4bf0-aaa3-edb5f885519a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-310ab043-20ac-451a-ab47-8425d749acc9' class='xr-var-data-in' type='checkbox'><label for='data-310ab043-20ac-451a-ab47-8425d749acc9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country code (ISO 3166-1 numeric)</dd><dt><span>comment :</span></dt><dd>These are 3-digit country codes (e.g., 003) stored as integers.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>uhslc_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c9c4b11d-af72-42ba-80de-af49eb72d73e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c9c4b11d-af72-42ba-80de-af49eb72d73e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f4d59a2d-81fe-4bfb-94d9-7370b55ea9b9' class='xr-var-data-in' type='checkbox'><label for='data-f4d59a2d-81fe-4bfb-94d9-7370b55ea9b9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the University of Hawaii Sea Level Center (UHSLC)</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gloss_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1a792480-482b-4871-83cb-d544c61361d3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1a792480-482b-4871-83cb-d544c61361d3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9fd9f055-42e9-4192-9f59-f9b45a4c0eb8' class='xr-var-data-in' type='checkbox'><label for='data-9fd9f055-42e9-4192-9f59-f9b45a4c0eb8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the WMO/IOC Global Sea Level Observing System (GLOSS)</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ssc_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>|S4</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f7984954-6f78-4b86-93eb-1aa6a8c73b95' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f7984954-6f78-4b86-93eb-1aa6a8c73b95' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-201ac9e3-c35f-4dbc-a680-caf445a3b1df' class='xr-var-data-in' type='checkbox'><label for='data-201ac9e3-c35f-4dbc-a680-caf445a3b1df' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID code in the Sealevel Station Catalog (SSC) produced by the WMO/IOC Sea Level Monitoring Facility (VLIZ)</dd><dt><span>comment :</span></dt><dd>Note that SSC IDs vary in length. The IDs are padded with space characters to produce the retangular character matrix provided here.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=|S4]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>last_rq_date</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4df65f01-01e0-4c40-8926-19fa9262f6c0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4df65f01-01e0-4c40-8926-19fa9262f6c0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-06a24f86-f109-4b6f-97fb-38b137927946' class='xr-var-data-in' type='checkbox'><label for='data-06a24f86-f109-4b6f-97fb-38b137927946' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>date of last Research Quality sea level value</dd><dt><span>comment :</span></dt><dd>Values in last_rq_date correspond to an identical value in the time vector. Dates less than or equal to last_rq_date for a given station correspond to Research Quality (RQ) data. Dates after last_rq_date correspond to Fast Delivery (FD) data. Missing values indicate no RQ data for a station.</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=datetime64[ns]]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>datum</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.162e+03</div><input id='attrs-96cbbd95-44f3-4bf8-ae5b-7e79e5d05a77' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-96cbbd95-44f3-4bf8-ae5b-7e79e5d05a77' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-917001ef-e980-4096-960b-899c62cddc7b' class='xr-var-data-in' type='checkbox'><label for='data-917001ef-e980-4096-960b-899c62cddc7b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>mm</dd></dl></div><div class='xr-var-data'><pre>array(2162.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>day</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 1 1 1 1 1 ... 317 317 317 317 318</div><input id='attrs-2a8e366c-ff62-4acb-8324-cca02aa0abed' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-2a8e366c-ff62-4acb-8324-cca02aa0abed' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-38661e72-ea88-46a5-bf5a-f53a16f0b5af' class='xr-var-data-in' type='checkbox'><label for='data-38661e72-ea88-46a5-bf5a-f53a16f0b5af' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  1,   1,   1, ..., 317, 317, 318])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>month</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 1 1 1 1 1 1 ... 11 11 11 11 11 11</div><input id='attrs-acc293f3-db65-456d-810a-f21dc4f7e7d4' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-acc293f3-db65-456d-810a-f21dc4f7e7d4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1fb305a6-9ceb-4cc4-bfbb-f2e2e1feb17d' class='xr-var-data-in' type='checkbox'><label for='data-1fb305a6-9ceb-4cc4-bfbb-f2e2e1feb17d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 1,  1,  1, ..., 11, 11, 11])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>year</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1983 1983 1983 ... 2022 2022 2022</div><input id='attrs-83b2b515-8b87-482f-a363-0f59f8fe0371' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-83b2b515-8b87-482f-a363-0f59f8fe0371' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8e17061a-c821-4a99-8733-7e6d488d65eb' class='xr-var-data-in' type='checkbox'><label for='data-8e17061a-c821-4a99-8733-7e6d488d65eb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1983, 1983, 1983, ..., 2022, 2022, 2022])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>year_storm</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1982 1982 1982 ... 2022 2022 2022</div><input id='attrs-830491cf-6d9f-492e-bd98-8a5ab37995cf' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-830491cf-6d9f-492e-bd98-8a5ab37995cf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-42d8c44e-b129-4544-be92-d55a2d8ad02e' class='xr-var-data-in' type='checkbox'><label for='data-42d8c44e-b129-4544-be92-d55a2d8ad02e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1982, 1982, 1982, ..., 2022, 2022, 2022])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9f6e6986-8b22-4792-a5b4-e5269362b4c0' class='xr-section-summary-in' type='checkbox'  ><label for='section-9f6e6986-8b22-4792-a5b4-e5269362b4c0' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-ee46943b-59a8-47e7-8377-1601aca68027' class='xr-index-data-in' type='checkbox'/><label for='index-ee46943b-59a8-47e7-8377-1601aca68027' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([       &#x27;1983-01-01 00:00:00&#x27;, &#x27;1983-01-01 01:00:00.028800&#x27;,
                &#x27;1983-01-01 01:59:59.971200&#x27;,        &#x27;1983-01-01 03:00:00&#x27;,
                &#x27;1983-01-01 04:00:00.028800&#x27;, &#x27;1983-01-01 04:59:59.971200&#x27;,
                       &#x27;1983-01-01 06:00:00&#x27;, &#x27;1983-01-01 07:00:00.028800&#x27;,
@@ -1321,7 +1765,7 @@ Attributes:
                &#x27;2022-11-13 19:00:00.028800&#x27;, &#x27;2022-11-13 19:59:59.971200&#x27;,
                       &#x27;2022-11-13 21:00:00&#x27;, &#x27;2022-11-13 22:00:00.028800&#x27;,
                &#x27;2022-11-13 22:59:59.971200&#x27;,        &#x27;2022-11-14 00:00:00&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=349489, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>record_id</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-da1127bb-d447-43a5-91a9-a6e1183b5065' class='xr-index-data-in' type='checkbox'/><label for='index-da1127bb-d447-43a5-91a9-a6e1183b5065' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Int64Index([70], dtype=&#x27;int64&#x27;, name=&#x27;record_id&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3c7ed286-29c4-40e4-a67b-d6bba5ec1347' class='xr-section-summary-in' type='checkbox'  ><label for='section-3c7ed286-29c4-40e4-a67b-d6bba5ec1347' class='xr-section-summary' >Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>UHSLC Fast Delivery Tide Gauge Data (hourly)</dd><dt><span>ncei_template_version :</span></dt><dd>NCEI_NetCDF_TimeSeries_Orthogonal_Template_v2.0</dd><dt><span>featureType :</span></dt><dd>timeSeries</dd><dt><span>Conventions :</span></dt><dd>CF-1.6, ACDD-1.3</dd><dt><span>date_created :</span></dt><dd>2023-12-07T14:34:12Z</dd><dt><span>publisher_name :</span></dt><dd>University of Hawaii Sea Level Center (UHSLC)</dd><dt><span>publisher_email :</span></dt><dd>philiprt@hawaii.edu, markm@soest.hawaii.edu</dd><dt><span>publisher_url :</span></dt><dd>http://uhslc.soest.hawaii.edu</dd><dt><span>summary :</span></dt><dd>The UHSLC assembles and distributes the Fast Delivery (FD) dataset of hourly- and daily-averaged tide gauge water-level observations. Tide gauge operators, or data creators, provide FD data to UHSLC after a level 1 quality assessment (see processing_level attribute). The UHSLC provides an independent quality assessment of the time series and makes FD data available within 4-6 weeks of collection. This is a &quot;fast&quot; turnaround time compared to Research Quality (RQ) data, which are available on an annual cycle after a level 2 quality assessment. RQ data replace FD data in the data stream as the former becomes available. This file contains hybrid time series composed of RQ data when available with FD data appended to the end of each RQ series.</dd><dt><span>processing_level :</span></dt><dd>Fast Delivery (FD) data undergo a level 1 quality assessment (e.g., unit and timing evaluation, outlier detection, combination of multiple channels into a primary channel, etc.). In this file, FD data are appended to Research Quality (RQ) data that have received a level 2 quality assessment (e.g., tide gauge datum evaluation, assessment of level ties to tide gauge benchmarks, comparison with nearby stations, etc.).</dd><dt><span>acknowledgment :</span></dt><dd>The UHSLC Fast Delivery database is supported by the National Oceanic and Atmospheric Administration (NOAA) Office of Climate Observations (OCO).</dd></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=349489, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>record_id</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-a566f8d2-1f97-4057-9a2f-82e44f163c4f' class='xr-index-data-in' type='checkbox'/><label for='index-a566f8d2-1f97-4057-9a2f-82e44f163c4f' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([70], dtype=&#x27;int16&#x27;, name=&#x27;record_id&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d63c2417-5756-4933-9970-e9a8a9ae8a25' class='xr-section-summary-in' type='checkbox'  ><label for='section-d63c2417-5756-4933-9970-e9a8a9ae8a25' class='xr-section-summary' >Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>UHSLC Fast Delivery Tide Gauge Data (hourly)</dd><dt><span>ncei_template_version :</span></dt><dd>NCEI_NetCDF_TimeSeries_Orthogonal_Template_v2.0</dd><dt><span>featureType :</span></dt><dd>timeSeries</dd><dt><span>Conventions :</span></dt><dd>CF-1.6, ACDD-1.3</dd><dt><span>date_created :</span></dt><dd>2023-12-07T14:34:12Z</dd><dt><span>publisher_name :</span></dt><dd>University of Hawaii Sea Level Center (UHSLC)</dd><dt><span>publisher_email :</span></dt><dd>philiprt@hawaii.edu, markm@soest.hawaii.edu</dd><dt><span>publisher_url :</span></dt><dd>http://uhslc.soest.hawaii.edu</dd><dt><span>summary :</span></dt><dd>The UHSLC assembles and distributes the Fast Delivery (FD) dataset of hourly- and daily-averaged tide gauge water-level observations. Tide gauge operators, or data creators, provide FD data to UHSLC after a level 1 quality assessment (see processing_level attribute). The UHSLC provides an independent quality assessment of the time series and makes FD data available within 4-6 weeks of collection. This is a &quot;fast&quot; turnaround time compared to Research Quality (RQ) data, which are available on an annual cycle after a level 2 quality assessment. RQ data replace FD data in the data stream as the former becomes available. This file contains hybrid time series composed of RQ data when available with FD data appended to the end of each RQ series.</dd><dt><span>processing_level :</span></dt><dd>Fast Delivery (FD) data undergo a level 1 quality assessment (e.g., unit and timing evaluation, outlier detection, combination of multiple channels into a primary channel, etc.). In this file, FD data are appended to Research Quality (RQ) data that have received a level 2 quality assessment (e.g., tide gauge datum evaluation, assessment of level ties to tide gauge benchmarks, comparison with nearby stations, etc.).</dd><dt><span>acknowledgment :</span></dt><dd>The UHSLC Fast Delivery database is supported by the National Oceanic and Atmospheric Administration (NOAA) Office of Climate Observations (OCO).</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1335,14 +1779,18 @@ Attributes:
 </section>
 </section>
 <section id="calculate-and-plot-flood-frequency">
-<h2><span class="section-number">2.2. </span>Calculate and Plot Flood Frequency<a class="headerlink" href="#calculate-and-plot-flood-frequency" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>Calculate and Plot Flood Frequency<a class="headerlink" href="#calculate-and-plot-flood-frequency" title="Permalink to this heading">#</a></h2>
 <p>To analyze flood frequency, we will look for daily maximum sea levels for each day in our dataset, following <span id="id1">Thompson <em>et al.</em> [<a class="reference internal" href="#id4" title="Philip R. Thompson, Matthew J. Widlansky, Mark A. Merrifield, Janet M. Becker, and John J. Marra. A Statistical Model for Frequency of Coastal Flooding in Honolulu, Hawaii, During the 21st Century. Journal of Geophysical Research: Oceans, 124(4):2787–2802, 2019. URL: https://onlinelibrary.wiley.com/doi/abs/10.1029/2018JC014741, doi:10.1029/2018JC014741.">TWM+19</a>]</span> and others. Then, we can group our data by year and month to visualize temporal patterns in daily SWL exceedance.</p>
 <figure class="margin align-default" id="fig-histogram">
-<img alt="../_images/e0e84ab5db483dc82c4f3a4e59ffbf1942d72c2b167c99872ea5e3218edb6836.png" src="../_images/e0e84ab5db483dc82c4f3a4e59ffbf1942d72c2b167c99872ea5e3218edb6836.png" />
+<img alt="../_images/2c43589e547b8c820dc9de85ac47bdb21d21de99b36adf686e75b3572c1e6c37.png" src="../_images/2c43589e547b8c820dc9de85ac47bdb21d21de99b36adf686e75b3572c1e6c37.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Histogram of daily maximum water levels at <span class="pasted-text">Malakal</span>,<span class="pasted-text">Palau</span> tide gauge for the entire record from <span class="pasted-text">datetime.datetime(1983, 1, 1, 0, 0)</span> to <span class="pasted-text">datetime.datetime(2022, 11, 14, 0, 0)</span>, relative to . The dashed red line indicates the chosen threshold of <span class="pasted-text">30</span> cm.</span><a class="headerlink" href="#fig-histogram" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Histogram of daily maximum water levels at <span class="pasted-text">Malakal</span>,<span class="pasted-text">Palau</span> tide gauge for the entire record from <span class="pasted-text">1983-01-01</span> to <span class="pasted-text">2022-11-14</span>, relative to . The dashed red line indicates the chosen threshold of <span class="pasted-text">30</span> cm.</span><a class="headerlink" href="#fig-histogram" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note this next code block takes a bit of time. Patience!</p>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resample the hourly data to daily maximum sea level</span>
@@ -1745,82 +2193,82 @@ Attributes:
     publisher_url:          http://uhslc.soest.hawaii.edu
     summary:                The UHSLC assembles and distributes the Fast Deli...
     processing_level:       Fast Delivery (FD) data undergo a level 1 quality...
-    acknowledgment:         The UHSLC Fast Delivery database is supported by ...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-d184f540-7324-4a43-a917-917e05887117' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d184f540-7324-4a43-a917-917e05887117' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 14563</li><li><span class='xr-has-index'>record_id</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-9c1d9c85-1ad0-4fcf-b9f5-647970b57ce5' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9c1d9c85-1ad0-4fcf-b9f5-647970b57ce5' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>record_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>70</div><input id='attrs-03f88e9c-7e59-47f0-8a47-85ccf83a9de4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-03f88e9c-7e59-47f0-8a47-85ccf83a9de4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d70a2263-739f-4a54-badc-aef096011632' class='xr-var-data-in' type='checkbox'><label for='data-d70a2263-739f-4a54-badc-aef096011632' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique identifier for each record (i.e., station and version) in the database</dd></dl></div><div class='xr-var-data'><pre>array([70], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1983-01-01 ... 2022-11-14</div><input id='attrs-6b2a9b7f-72e4-465f-932b-89b3b3f34a04' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-6b2a9b7f-72e4-465f-932b-89b3b3f34a04' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6d9921c3-74f8-42e0-a501-945fe4761a61' class='xr-var-data-in' type='checkbox'><label for='data-6d9921c3-74f8-42e0-a501-945fe4761a61' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;1983-01-01T00:00:00.000000000&#x27;, &#x27;1983-01-02T00:00:00.000000000&#x27;,
+    acknowledgment:         The UHSLC Fast Delivery database is supported by ...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-696515a6-07ab-4582-bfb8-e63e2f5443e1' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-696515a6-07ab-4582-bfb8-e63e2f5443e1' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 14563</li><li><span class='xr-has-index'>record_id</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-00abab88-27c3-4951-95c3-65948601eae2' class='xr-section-summary-in' type='checkbox'  checked><label for='section-00abab88-27c3-4951-95c3-65948601eae2' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>record_id</span></div><div class='xr-var-dims'>(record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>70</div><input id='attrs-c7236f7c-2c56-4f17-a0ee-03ebb3e69613' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c7236f7c-2c56-4f17-a0ee-03ebb3e69613' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9a496de8-3935-4d7f-89ab-0a059d56475d' class='xr-var-data-in' type='checkbox'><label for='data-9a496de8-3935-4d7f-89ab-0a059d56475d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique identifier for each record (i.e., station and version) in the database</dd></dl></div><div class='xr-var-data'><pre>array([70], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1983-01-01 ... 2022-11-14</div><input id='attrs-2f60dd66-ad54-446a-a258-87eebe3da3d6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2f60dd66-ad54-446a-a258-87eebe3da3d6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-15c19918-02bc-4c52-8517-80a1dc1239f5' class='xr-var-data-in' type='checkbox'><label for='data-15c19918-02bc-4c52-8517-80a1dc1239f5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1983-01-01T00:00:00.000000000&#x27;, &#x27;1983-01-02T00:00:00.000000000&#x27;,
        &#x27;1983-01-03T00:00:00.000000000&#x27;, ..., &#x27;2022-11-12T00:00:00.000000000&#x27;,
        &#x27;2022-11-13T00:00:00.000000000&#x27;, &#x27;2022-11-14T00:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2357e217-f182-45b8-8f70-3939dd6208ff' class='xr-section-summary-in' type='checkbox'  ><label for='section-2357e217-f182-45b8-8f70-3939dd6208ff' class='xr-section-summary' >Data variables: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>sea_level</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-23.0 -109.0 -269.0 ... 1.0 -373.0</div><input id='attrs-2dbff72e-1ba5-4737-b198-379e204aadcb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2dbff72e-1ba5-4737-b198-379e204aadcb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bf0375e0-b431-4de5-a9b0-ff80f1d09097' class='xr-var-data-in' type='checkbox'><label for='data-bf0375e0-b431-4de5-a9b0-ff80f1d09097' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>mm</dd></dl></div><div class='xr-var-data'><pre>array([[ -23.],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-58a4d004-7b58-4256-8d20-971f429104ab' class='xr-section-summary-in' type='checkbox'  ><label for='section-58a4d004-7b58-4256-8d20-971f429104ab' class='xr-section-summary' >Data variables: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>sea_level</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-23.0 -109.0 -269.0 ... 1.0 -373.0</div><input id='attrs-db59ac32-f3f5-4e8e-abf0-8f997961f412' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-db59ac32-f3f5-4e8e-abf0-8f997961f412' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-154e8f68-5088-48ea-90c2-35675ec8c4fb' class='xr-var-data-in' type='checkbox'><label for='data-154e8f68-5088-48ea-90c2-35675ec8c4fb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>mm</dd></dl></div><div class='xr-var-data'><pre>array([[ -23.],
        [-109.],
        [-269.],
        ...,
        [  57.],
        [   1.],
-       [-373.]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>7.33 7.33 7.33 ... 7.33 7.33 7.33</div><input id='attrs-31e6ccdc-f4f9-4ee4-bb6e-a73fdd747558' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-31e6ccdc-f4f9-4ee4-bb6e-a73fdd747558' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-22b0a39d-8064-4208-addd-867e6a31cf55' class='xr-var-data-in' type='checkbox'><label for='data-22b0a39d-8064-4208-addd-867e6a31cf55' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>valid_min :</span></dt><dd>-90</dd><dt><span>valid_max :</span></dt><dd>90</dd></dl></div><div class='xr-var-data'><pre>array([[7.33],
+       [-373.]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>7.33 7.33 7.33 ... 7.33 7.33 7.33</div><input id='attrs-341f8a25-0046-4184-abe5-a7f8811fe4ab' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-341f8a25-0046-4184-abe5-a7f8811fe4ab' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f83d77d0-21f6-43fd-ba4d-fc1b95dff7e0' class='xr-var-data-in' type='checkbox'><label for='data-f83d77d0-21f6-43fd-ba4d-fc1b95dff7e0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>valid_min :</span></dt><dd>-90</dd><dt><span>valid_max :</span></dt><dd>90</dd></dl></div><div class='xr-var-data'><pre>array([[7.33],
        [7.33],
        [7.33],
        ...,
        [7.33],
        [7.33],
-       [7.33]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>134.5 134.5 134.5 ... 134.5 134.5</div><input id='attrs-e11d5d6f-dcd2-4b5f-9790-887a62e8285b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e11d5d6f-dcd2-4b5f-9790-887a62e8285b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d568dda0-d4f1-4780-8cfd-8cff1262dfe6' class='xr-var-data-in' type='checkbox'><label for='data-d568dda0-d4f1-4780-8cfd-8cff1262dfe6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>360</dd></dl></div><div class='xr-var-data'><pre>array([[134.463],
+       [7.33]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>134.5 134.5 134.5 ... 134.5 134.5</div><input id='attrs-7f3ca85e-5923-424e-96c8-e032eaebdbd4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7f3ca85e-5923-424e-96c8-e032eaebdbd4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ea0fb4ea-718e-4589-a42d-7806f4eddd2e' class='xr-var-data-in' type='checkbox'><label for='data-ea0fb4ea-718e-4589-a42d-7806f4eddd2e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>360</dd></dl></div><div class='xr-var-data'><pre>array([[134.463],
        [134.463],
        [134.463],
        ...,
        [134.463],
        [134.463],
-       [134.463]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_name</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>|S7</div><div class='xr-var-preview xr-preview'>b&#x27;Malakal&#x27; ... b&#x27;Malakal&#x27;</div><input id='attrs-e328969d-963d-4d90-9267-974f5da1f608' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e328969d-963d-4d90-9267-974f5da1f608' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dfa40747-3e73-4cc8-ab41-bac416c42c24' class='xr-var-data-in' type='checkbox'><label for='data-dfa40747-3e73-4cc8-ab41-bac416c42c24' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station name</dd></dl></div><div class='xr-var-data'><pre>array([[b&#x27;Malakal&#x27;],
+       [134.463]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_name</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>|S7</div><div class='xr-var-preview xr-preview'>b&#x27;Malakal&#x27; ... b&#x27;Malakal&#x27;</div><input id='attrs-4b026a21-bf68-4b45-8ef3-d9b586b489bd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4b026a21-bf68-4b45-8ef3-d9b586b489bd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-61e9730d-254d-48d5-8f3e-b5e6f0d486ea' class='xr-var-data-in' type='checkbox'><label for='data-61e9730d-254d-48d5-8f3e-b5e6f0d486ea' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station name</dd></dl></div><div class='xr-var-data'><pre>array([[b&#x27;Malakal&#x27;],
        [b&#x27;Malakal&#x27;],
        [b&#x27;Malakal&#x27;],
        ...,
        [b&#x27;Malakal&#x27;],
        [b&#x27;Malakal&#x27;],
-       [b&#x27;Malakal&#x27;]], dtype=&#x27;|S7&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>|S5</div><div class='xr-var-preview xr-preview'>b&#x27;Palau&#x27; b&#x27;Palau&#x27; ... b&#x27;Palau&#x27;</div><input id='attrs-59a5354d-ab86-451b-8e20-6700abc7cfb1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-59a5354d-ab86-451b-8e20-6700abc7cfb1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dccd45c4-0e79-4422-a7e0-fc01175e932e' class='xr-var-data-in' type='checkbox'><label for='data-dccd45c4-0e79-4422-a7e0-fc01175e932e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country (ISO 3166-1)</dd></dl></div><div class='xr-var-data'><pre>array([[b&#x27;Palau&#x27;],
+       [b&#x27;Malakal&#x27;]], dtype=&#x27;|S7&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>|S5</div><div class='xr-var-preview xr-preview'>b&#x27;Palau&#x27; b&#x27;Palau&#x27; ... b&#x27;Palau&#x27;</div><input id='attrs-5ebc438b-2372-4589-9fad-2ceccd137c80' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5ebc438b-2372-4589-9fad-2ceccd137c80' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-717fae84-12e7-4d59-855f-647a39ef90e5' class='xr-var-data-in' type='checkbox'><label for='data-717fae84-12e7-4d59-855f-647a39ef90e5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country (ISO 3166-1)</dd></dl></div><div class='xr-var-data'><pre>array([[b&#x27;Palau&#x27;],
        [b&#x27;Palau&#x27;],
        [b&#x27;Palau&#x27;],
        ...,
        [b&#x27;Palau&#x27;],
        [b&#x27;Palau&#x27;],
-       [b&#x27;Palau&#x27;]], dtype=&#x27;|S5&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country_code</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>585.0 585.0 585.0 ... 585.0 585.0</div><input id='attrs-472940b1-3903-4d6f-95f4-47bfaa9fe7d6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-472940b1-3903-4d6f-95f4-47bfaa9fe7d6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-97c7ffa7-ef16-42e1-b506-7640416498b4' class='xr-var-data-in' type='checkbox'><label for='data-97c7ffa7-ef16-42e1-b506-7640416498b4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country code (ISO 3166-1 numeric)</dd><dt><span>comment :</span></dt><dd>These are 3-digit country codes (e.g., 003) stored as integers.</dd></dl></div><div class='xr-var-data'><pre>array([[585.],
+       [b&#x27;Palau&#x27;]], dtype=&#x27;|S5&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>station_country_code</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>585.0 585.0 585.0 ... 585.0 585.0</div><input id='attrs-788b0e28-59b6-4e5c-b5e1-3329a3a7aea0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-788b0e28-59b6-4e5c-b5e1-3329a3a7aea0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9e058344-7753-444e-8fba-3540e6f06312' class='xr-var-data-in' type='checkbox'><label for='data-9e058344-7753-444e-8fba-3540e6f06312' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>station country code (ISO 3166-1 numeric)</dd><dt><span>comment :</span></dt><dd>These are 3-digit country codes (e.g., 003) stored as integers.</dd></dl></div><div class='xr-var-data'><pre>array([[585.],
        [585.],
        [585.],
        ...,
        [585.],
        [585.],
-       [585.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>uhslc_id</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>7 7 7 7 7 7 7 7 ... 7 7 7 7 7 7 7 7</div><input id='attrs-6c321245-663c-4d11-b97c-60d7a163c87c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6c321245-663c-4d11-b97c-60d7a163c87c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-461179c2-c348-469e-9234-7e98db40156f' class='xr-var-data-in' type='checkbox'><label for='data-461179c2-c348-469e-9234-7e98db40156f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the University of Hawaii Sea Level Center (UHSLC)</dd></dl></div><div class='xr-var-data'><pre>array([[7],
+       [585.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>uhslc_id</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>7 7 7 7 7 7 7 7 ... 7 7 7 7 7 7 7 7</div><input id='attrs-6fa14e84-def8-476b-a6bc-eaa61af79a02' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6fa14e84-def8-476b-a6bc-eaa61af79a02' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f2633ebc-153e-488a-8d0b-6f9ed4035afa' class='xr-var-data-in' type='checkbox'><label for='data-f2633ebc-153e-488a-8d0b-6f9ed4035afa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the University of Hawaii Sea Level Center (UHSLC)</dd></dl></div><div class='xr-var-data'><pre>array([[7],
        [7],
        [7],
        ...,
        [7],
        [7],
-       [7]], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gloss_id</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>120.0 120.0 120.0 ... 120.0 120.0</div><input id='attrs-a13a857b-bba3-4fff-87d0-ea6fdc2fc473' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a13a857b-bba3-4fff-87d0-ea6fdc2fc473' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0d9930df-16aa-474c-8d87-398bb21ab2b5' class='xr-var-data-in' type='checkbox'><label for='data-0d9930df-16aa-474c-8d87-398bb21ab2b5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the WMO/IOC Global Sea Level Observing System (GLOSS)</dd></dl></div><div class='xr-var-data'><pre>array([[120.],
+       [7]], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gloss_id</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>120.0 120.0 120.0 ... 120.0 120.0</div><input id='attrs-2c3ddd75-168b-4ed1-ae3f-f3b43fe76ecd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2c3ddd75-168b-4ed1-ae3f-f3b43fe76ecd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ffe0b838-6668-46fc-b802-948c396247d7' class='xr-var-data-in' type='checkbox'><label for='data-ffe0b838-6668-46fc-b802-948c396247d7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID number used by the WMO/IOC Global Sea Level Observing System (GLOSS)</dd></dl></div><div class='xr-var-data'><pre>array([[120.],
        [120.],
        [120.],
        ...,
        [120.],
        [120.],
-       [120.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ssc_id</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>|S4</div><div class='xr-var-preview xr-preview'>b&#x27;mala&#x27; b&#x27;mala&#x27; ... b&#x27;mala&#x27; b&#x27;mala&#x27;</div><input id='attrs-9201be84-a317-4cc6-90a4-0503105573e2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9201be84-a317-4cc6-90a4-0503105573e2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-66dfe9c3-2881-44f0-8f62-9b54d444b9f4' class='xr-var-data-in' type='checkbox'><label for='data-66dfe9c3-2881-44f0-8f62-9b54d444b9f4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID code in the Sealevel Station Catalog (SSC) produced by the WMO/IOC Sea Level Monitoring Facility (VLIZ)</dd><dt><span>comment :</span></dt><dd>Note that SSC IDs vary in length. The IDs are padded with space characters to produce the retangular character matrix provided here.</dd></dl></div><div class='xr-var-data'><pre>array([[b&#x27;mala&#x27;],
+       [120.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ssc_id</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>|S4</div><div class='xr-var-preview xr-preview'>b&#x27;mala&#x27; b&#x27;mala&#x27; ... b&#x27;mala&#x27; b&#x27;mala&#x27;</div><input id='attrs-280045c6-49e4-46a6-83af-6f8613283829' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-280045c6-49e4-46a6-83af-6f8613283829' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-61475220-a593-4c35-bba0-b4d7e85f15d0' class='xr-var-data-in' type='checkbox'><label for='data-61475220-a593-4c35-bba0-b4d7e85f15d0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>unique station ID code in the Sealevel Station Catalog (SSC) produced by the WMO/IOC Sea Level Monitoring Facility (VLIZ)</dd><dt><span>comment :</span></dt><dd>Note that SSC IDs vary in length. The IDs are padded with space characters to produce the retangular character matrix provided here.</dd></dl></div><div class='xr-var-data'><pre>array([[b&#x27;mala&#x27;],
        [b&#x27;mala&#x27;],
        [b&#x27;mala&#x27;],
        ...,
        [b&#x27;mala&#x27;],
        [b&#x27;mala&#x27;],
-       [b&#x27;mala&#x27;]], dtype=&#x27;|S4&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>last_rq_date</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2018-12-31T22:59:59.971200 ... 2...</div><input id='attrs-520d79cb-67ab-4091-90d3-a2cec2f643ae' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-520d79cb-67ab-4091-90d3-a2cec2f643ae' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c4043b76-d2fe-4751-8c23-0baa408cb372' class='xr-var-data-in' type='checkbox'><label for='data-c4043b76-d2fe-4751-8c23-0baa408cb372' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>date of last Research Quality sea level value</dd><dt><span>comment :</span></dt><dd>Values in last_rq_date correspond to an identical value in the time vector. Dates less than or equal to last_rq_date for a given station correspond to Research Quality (RQ) data. Dates after last_rq_date correspond to Fast Delivery (FD) data. Missing values indicate no RQ data for a station.</dd></dl></div><div class='xr-var-data'><pre>array([[&#x27;2018-12-31T22:59:59.971200000&#x27;],
+       [b&#x27;mala&#x27;]], dtype=&#x27;|S4&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>last_rq_date</span></div><div class='xr-var-dims'>(time, record_id)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2018-12-31T22:59:59.971200 ... 2...</div><input id='attrs-c20a37c1-d4c9-49ec-b991-8be2c5b39bb3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c20a37c1-d4c9-49ec-b991-8be2c5b39bb3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-10e216c0-c96c-4ab3-90cf-20f3c750e941' class='xr-var-data-in' type='checkbox'><label for='data-10e216c0-c96c-4ab3-90cf-20f3c750e941' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>date of last Research Quality sea level value</dd><dt><span>comment :</span></dt><dd>Values in last_rq_date correspond to an identical value in the time vector. Dates less than or equal to last_rq_date for a given station correspond to Research Quality (RQ) data. Dates after last_rq_date correspond to Fast Delivery (FD) data. Missing values indicate no RQ data for a station.</dd></dl></div><div class='xr-var-data'><pre>array([[&#x27;2018-12-31T22:59:59.971200000&#x27;],
        [&#x27;2018-12-31T22:59:59.971200000&#x27;],
        [&#x27;2018-12-31T22:59:59.971200000&#x27;],
        ...,
        [&#x27;2018-12-31T22:59:59.971200000&#x27;],
        [&#x27;2018-12-31T22:59:59.971200000&#x27;],
-       [&#x27;2018-12-31T22:59:59.971200000&#x27;]], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>datum</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.162e+03 2.162e+03 ... 2.162e+03</div><input id='attrs-f4c27bbd-f9a1-41bc-9ccf-6846108e24dd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f4c27bbd-f9a1-41bc-9ccf-6846108e24dd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c00f8a22-92d4-4dc6-be24-5102d2ad1659' class='xr-var-data-in' type='checkbox'><label for='data-c00f8a22-92d4-4dc6-be24-5102d2ad1659' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>mm</dd></dl></div><div class='xr-var-data'><pre>array([2162., 2162., 2162., ..., 2162., 2162., 2162.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>day</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 ... 314 315 316 317 318</div><input id='attrs-2cfd5e86-efbe-4785-a0ef-f92652b3cfdb' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-2cfd5e86-efbe-4785-a0ef-f92652b3cfdb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4cb4c133-72c5-44e6-87b0-35a3a0e7bf7e' class='xr-var-data-in' type='checkbox'><label for='data-4cb4c133-72c5-44e6-87b0-35a3a0e7bf7e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  1,   2,   3, ..., 316, 317, 318])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>month</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 1 1 1 1 1 1 ... 11 11 11 11 11 11</div><input id='attrs-dc2eea4c-d33b-4e00-b84a-2d99869a272d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-dc2eea4c-d33b-4e00-b84a-2d99869a272d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-53c019aa-1804-4ac3-bc89-87d37c00a3ec' class='xr-var-data-in' type='checkbox'><label for='data-53c019aa-1804-4ac3-bc89-87d37c00a3ec' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 1,  1,  1, ..., 11, 11, 11])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>year</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1983 1983 1983 ... 2022 2022 2022</div><input id='attrs-b1bb02a5-3dbd-4cad-8fa6-94ee17ef9a6b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b1bb02a5-3dbd-4cad-8fa6-94ee17ef9a6b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f0970b1f-7e5e-40a2-ac7c-5bdc89674f75' class='xr-var-data-in' type='checkbox'><label for='data-f0970b1f-7e5e-40a2-ac7c-5bdc89674f75' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1983, 1983, 1983, ..., 2022, 2022, 2022])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>year_storm</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1983 1983 1983 ... 2022 2022 2022</div><input id='attrs-258418bd-9220-4f0d-8cb3-ffe724d7a602' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-258418bd-9220-4f0d-8cb3-ffe724d7a602' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dd4380a2-7a66-4cfc-aa58-e16ba5b0bc1b' class='xr-var-data-in' type='checkbox'><label for='data-dd4380a2-7a66-4cfc-aa58-e16ba5b0bc1b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1983, 1983, 1983, ..., 2022, 2022, 2022])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-1705e048-c647-4c3f-aac9-2cab4427d7d0' class='xr-section-summary-in' type='checkbox'  ><label for='section-1705e048-c647-4c3f-aac9-2cab4427d7d0' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>record_id</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-5ebc36b0-54cd-464b-b534-385b678fcf95' class='xr-index-data-in' type='checkbox'/><label for='index-5ebc36b0-54cd-464b-b534-385b678fcf95' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Int64Index([70], dtype=&#x27;int64&#x27;, name=&#x27;record_id&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-5d61b302-0946-49c6-a2c7-2965e4cb01f3' class='xr-index-data-in' type='checkbox'/><label for='index-5d61b302-0946-49c6-a2c7-2965e4cb01f3' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;1983-01-01&#x27;, &#x27;1983-01-02&#x27;, &#x27;1983-01-03&#x27;, &#x27;1983-01-04&#x27;,
+       [&#x27;2018-12-31T22:59:59.971200000&#x27;]], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>datum</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.162e+03 2.162e+03 ... 2.162e+03</div><input id='attrs-4a796c8b-2068-46c7-a21f-cd6e0404f540' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4a796c8b-2068-46c7-a21f-cd6e0404f540' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b3bed854-409a-465a-85a2-c185538f0a69' class='xr-var-data-in' type='checkbox'><label for='data-b3bed854-409a-465a-85a2-c185538f0a69' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>mm</dd></dl></div><div class='xr-var-data'><pre>array([2162., 2162., 2162., ..., 2162., 2162., 2162.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>day</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 ... 314 315 316 317 318</div><input id='attrs-b1e4b0ed-97cf-4911-94a9-6ffcf3a7a5dd' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b1e4b0ed-97cf-4911-94a9-6ffcf3a7a5dd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7e716a37-4d7a-4216-925d-8b2cf4b12cac' class='xr-var-data-in' type='checkbox'><label for='data-7e716a37-4d7a-4216-925d-8b2cf4b12cac' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  1,   2,   3, ..., 316, 317, 318])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>month</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1 1 1 1 1 1 1 ... 11 11 11 11 11 11</div><input id='attrs-b5428ac1-8631-4d2d-b394-e9c3d507d6ba' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b5428ac1-8631-4d2d-b394-e9c3d507d6ba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8943a5fa-95d6-44f3-bd48-8d30129442aa' class='xr-var-data-in' type='checkbox'><label for='data-8943a5fa-95d6-44f3-bd48-8d30129442aa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 1,  1,  1, ..., 11, 11, 11])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>year</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1983 1983 1983 ... 2022 2022 2022</div><input id='attrs-32e8b671-ad0a-47b7-9995-bb167fd74952' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-32e8b671-ad0a-47b7-9995-bb167fd74952' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-700aee99-29aa-4608-8bad-77c107e49b0c' class='xr-var-data-in' type='checkbox'><label for='data-700aee99-29aa-4608-8bad-77c107e49b0c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1983, 1983, 1983, ..., 2022, 2022, 2022])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>year_storm</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1983 1983 1983 ... 2022 2022 2022</div><input id='attrs-e997d9e9-1c7c-468a-8c79-edf827229f61' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e997d9e9-1c7c-468a-8c79-edf827229f61' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4fbbbd5c-b2a3-470e-a24f-cbe1c4848907' class='xr-var-data-in' type='checkbox'><label for='data-4fbbbd5c-b2a3-470e-a24f-cbe1c4848907' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([1983, 1983, 1983, ..., 2022, 2022, 2022])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-86faea51-6745-4890-9b81-96464ff31e3a' class='xr-section-summary-in' type='checkbox'  ><label for='section-86faea51-6745-4890-9b81-96464ff31e3a' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>record_id</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-02cd5b06-8af5-449c-8446-a7cf600bcada' class='xr-index-data-in' type='checkbox'/><label for='index-02cd5b06-8af5-449c-8446-a7cf600bcada' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([70], dtype=&#x27;int16&#x27;, name=&#x27;record_id&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-148d7d11-2d6d-4002-a24b-d9916d740f5f' class='xr-index-data-in' type='checkbox'/><label for='index-148d7d11-2d6d-4002-a24b-d9916d740f5f' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;1983-01-01&#x27;, &#x27;1983-01-02&#x27;, &#x27;1983-01-03&#x27;, &#x27;1983-01-04&#x27;,
                &#x27;1983-01-05&#x27;, &#x27;1983-01-06&#x27;, &#x27;1983-01-07&#x27;, &#x27;1983-01-08&#x27;,
                &#x27;1983-01-09&#x27;, &#x27;1983-01-10&#x27;,
                ...
                &#x27;2022-11-05&#x27;, &#x27;2022-11-06&#x27;, &#x27;2022-11-07&#x27;, &#x27;2022-11-08&#x27;,
                &#x27;2022-11-09&#x27;, &#x27;2022-11-10&#x27;, &#x27;2022-11-11&#x27;, &#x27;2022-11-12&#x27;,
                &#x27;2022-11-13&#x27;, &#x27;2022-11-14&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=14563, freq=&#x27;D&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-998cdb62-a5d5-454c-991f-a2f6dfe5c1bf' class='xr-section-summary-in' type='checkbox'  ><label for='section-998cdb62-a5d5-454c-991f-a2f6dfe5c1bf' class='xr-section-summary' >Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>UHSLC Fast Delivery Tide Gauge Data (hourly)</dd><dt><span>ncei_template_version :</span></dt><dd>NCEI_NetCDF_TimeSeries_Orthogonal_Template_v2.0</dd><dt><span>featureType :</span></dt><dd>timeSeries</dd><dt><span>Conventions :</span></dt><dd>CF-1.6, ACDD-1.3</dd><dt><span>date_created :</span></dt><dd>2023-12-07T14:34:12Z</dd><dt><span>publisher_name :</span></dt><dd>University of Hawaii Sea Level Center (UHSLC)</dd><dt><span>publisher_email :</span></dt><dd>philiprt@hawaii.edu, markm@soest.hawaii.edu</dd><dt><span>publisher_url :</span></dt><dd>http://uhslc.soest.hawaii.edu</dd><dt><span>summary :</span></dt><dd>The UHSLC assembles and distributes the Fast Delivery (FD) dataset of hourly- and daily-averaged tide gauge water-level observations. Tide gauge operators, or data creators, provide FD data to UHSLC after a level 1 quality assessment (see processing_level attribute). The UHSLC provides an independent quality assessment of the time series and makes FD data available within 4-6 weeks of collection. This is a &quot;fast&quot; turnaround time compared to Research Quality (RQ) data, which are available on an annual cycle after a level 2 quality assessment. RQ data replace FD data in the data stream as the former becomes available. This file contains hybrid time series composed of RQ data when available with FD data appended to the end of each RQ series.</dd><dt><span>processing_level :</span></dt><dd>Fast Delivery (FD) data undergo a level 1 quality assessment (e.g., unit and timing evaluation, outlier detection, combination of multiple channels into a primary channel, etc.). In this file, FD data are appended to Research Quality (RQ) data that have received a level 2 quality assessment (e.g., tide gauge datum evaluation, assessment of level ties to tide gauge benchmarks, comparison with nearby stations, etc.).</dd><dt><span>acknowledgment :</span></dt><dd>The UHSLC Fast Delivery database is supported by the National Oceanic and Atmospheric Administration (NOAA) Office of Climate Observations (OCO).</dd></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=14563, freq=&#x27;D&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-35edbd41-a259-4fdf-932e-b74944e6222a' class='xr-section-summary-in' type='checkbox'  ><label for='section-35edbd41-a259-4fdf-932e-b74944e6222a' class='xr-section-summary' >Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>UHSLC Fast Delivery Tide Gauge Data (hourly)</dd><dt><span>ncei_template_version :</span></dt><dd>NCEI_NetCDF_TimeSeries_Orthogonal_Template_v2.0</dd><dt><span>featureType :</span></dt><dd>timeSeries</dd><dt><span>Conventions :</span></dt><dd>CF-1.6, ACDD-1.3</dd><dt><span>date_created :</span></dt><dd>2023-12-07T14:34:12Z</dd><dt><span>publisher_name :</span></dt><dd>University of Hawaii Sea Level Center (UHSLC)</dd><dt><span>publisher_email :</span></dt><dd>philiprt@hawaii.edu, markm@soest.hawaii.edu</dd><dt><span>publisher_url :</span></dt><dd>http://uhslc.soest.hawaii.edu</dd><dt><span>summary :</span></dt><dd>The UHSLC assembles and distributes the Fast Delivery (FD) dataset of hourly- and daily-averaged tide gauge water-level observations. Tide gauge operators, or data creators, provide FD data to UHSLC after a level 1 quality assessment (see processing_level attribute). The UHSLC provides an independent quality assessment of the time series and makes FD data available within 4-6 weeks of collection. This is a &quot;fast&quot; turnaround time compared to Research Quality (RQ) data, which are available on an annual cycle after a level 2 quality assessment. RQ data replace FD data in the data stream as the former becomes available. This file contains hybrid time series composed of RQ data when available with FD data appended to the end of each RQ series.</dd><dt><span>processing_level :</span></dt><dd>Fast Delivery (FD) data undergo a level 1 quality assessment (e.g., unit and timing evaluation, outlier detection, combination of multiple channels into a primary channel, etc.). In this file, FD data are appended to Research Quality (RQ) data that have received a level 2 quality assessment (e.g., tide gauge datum evaluation, assessment of level ties to tide gauge benchmarks, comparison with nearby stations, etc.).</dd><dt><span>acknowledgment :</span></dt><dd>The UHSLC Fast Delivery database is supported by the National Oceanic and Atmospheric Administration (NOAA) Office of Climate Observations (OCO).</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a new figure that is 15 x 5</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">SL_daily_max</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">SL_daily_max</span><span class="o">.</span><span class="n">sea_level</span><span class="o">.</span><span class="n">values</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date (Calendar Year)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sea Level (cm)&#39;</span><span class="p">)</span>
@@ -1832,7 +2280,7 @@ Attributes:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sea Level Daily Maximum Time Series&#39;)
 </pre></div>
 </div>
-<img alt="../_images/ce09506fc4e253ee04fe8722673eff450dd304a1f80fda8b106460d5ab694d0b.png" src="../_images/ce09506fc4e253ee04fe8722673eff450dd304a1f80fda8b106460d5ab694d0b.png" />
+<img alt="../_images/346daa2f6411af69dd680805e9b1afea3bf270dfcc9050b700318f8a1cff9127.png" src="../_images/346daa2f6411af69dd680805e9b1afea3bf270dfcc9050b700318f8a1cff9127.png" />
 </div>
 </div>
 <div class="cell tag_hide-output docutils container">
@@ -1858,7 +2306,7 @@ Attributes:
 <span class="n">yrange</span> <span class="o">=</span> <span class="n">ymax</span> <span class="o">-</span> <span class="n">ymin</span>
 <span class="n">y_middle</span> <span class="o">=</span> <span class="n">ymin</span> <span class="o">+</span> <span class="n">yrange</span><span class="o">/</span><span class="mi">2</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">threshold</span><span class="p">,</span> <span class="n">y_middle</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.4f}</span><span class="s1"> cm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">threshold</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">threshold</span><span class="p">,</span> <span class="n">y_middle</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.1f}</span><span class="s1"> cm&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">threshold</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;histogram_fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1869,7 +2317,7 @@ Attributes:
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<img alt="../_images/e0e84ab5db483dc82c4f3a4e59ffbf1942d72c2b167c99872ea5e3218edb6836.png" src="../_images/e0e84ab5db483dc82c4f3a4e59ffbf1942d72c2b167c99872ea5e3218edb6836.png" />
+<img alt="../_images/2c43589e547b8c820dc9de85ac47bdb21d21de99b36adf686e75b3572c1e6c37.png" src="../_images/2c43589e547b8c820dc9de85ac47bdb21d21de99b36adf686e75b3572c1e6c37.png" />
 </div>
 </details>
 </div>
@@ -1912,7 +2360,7 @@ Attributes:
 </div>
 </div>
 <section id="plot-flood-frequency-counts">
-<h3><span class="section-number">2.2.1. </span>Plot Flood Frequency Counts<a class="headerlink" href="#plot-flood-frequency-counts" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.1. </span>Plot Flood Frequency Counts<a class="headerlink" href="#plot-flood-frequency-counts" title="Permalink to this heading">#</a></h3>
 <p>The flood frequency counts are defined as the number of time periods that exceed a given threshold within a year. This plot follows <span id="id2">Sweet <em>et al.</em> [<a class="reference internal" href="#id5" title="William Sweet, Joseph Park, John Marra, Chris Zervas, and Stephen Gill. Sea level rise and nuisance flood frequency changes around the United States. Technical Report, NOAA, 2014. URL: https://repository.library.noaa.gov/view/noaa/30823.">SPM+14</a>]</span>.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -1922,7 +2370,7 @@ Attributes:
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">adjusted_heatmap_palette</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">value</span><span class="p">))</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">flood_days_per_year</span><span class="p">[</span><span class="s1">&#39;flood_days_count&#39;</span><span class="p">]]</span>
 
 <span class="c1"># Plotting with the adjusted settings</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;year_storm&#39;</span><span class="p">,</span> 
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;flood_days_count&#39;</span><span class="p">,</span> 
@@ -1944,6 +2392,9 @@ Attributes:
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Number of Flood Days Per Year (Adjusted Heatmap Coloring)&#39;</span><span class="p">)</span>
              
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;threshold_counts_days_fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># save the figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s1">&#39;SL_FloodFrequency_threshold_counts_days.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1953,19 +2404,19 @@ Attributes:
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<img alt="../_images/b3d9a01bd91835ad9caef47cea03cb1df894e1531c394b6836dc664ffed3aa26.png" src="../_images/b3d9a01bd91835ad9caef47cea03cb1df894e1531c394b6836dc664ffed3aa26.png" />
+<img alt="../_images/40c0ad9ce275e1931e93aef470ece3518634e90e907067c2e4f9fa2fb14ad025.png" src="../_images/40c0ad9ce275e1931e93aef470ece3518634e90e907067c2e4f9fa2fb14ad025.png" />
 </div>
 </details>
 </div>
 <figure class="align-default" id="fig-threshold-counts">
-<img alt="../_images/b3d9a01bd91835ad9caef47cea03cb1df894e1531c394b6836dc664ffed3aa26.png" src="../_images/b3d9a01bd91835ad9caef47cea03cb1df894e1531c394b6836dc664ffed3aa26.png" />
+<img alt="../_images/40c0ad9ce275e1931e93aef470ece3518634e90e907067c2e4f9fa2fb14ad025.png" src="../_images/40c0ad9ce275e1931e93aef470ece3518634e90e907067c2e4f9fa2fb14ad025.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Flood frequency counts above a threshold of <span class="pasted-text">30.000</span> cm per year at <span class="pasted-text">Malakal</span>,<span class="pasted-text">Palau</span> tide gauge from <span class="pasted-text">datetime.datetime(1983, 1, 1, 0, 0)</span> to <span class="pasted-text">datetime.datetime(2022, 11, 14, 0, 0)</span>.</span><a class="headerlink" href="#fig-threshold-counts" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Flood frequency counts above a threshold of <span class="pasted-text">30.000</span> cm per year at <span class="pasted-text">Malakal</span>,<span class="pasted-text">Palau</span> tide gauge from <span class="pasted-text">1983-01-01</span> to <span class="pasted-text">2022-11-14</span>.</span><a class="headerlink" href="#fig-threshold-counts" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="plot-flood-duration">
-<h3><span class="section-number">2.2.2. </span>Plot Flood Duration<a class="headerlink" href="#plot-flood-duration" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.3.2. </span>Plot Flood Duration<a class="headerlink" href="#plot-flood-duration" title="Permalink to this heading">#</a></h3>
 <p>This next plot examines the average duration of flooding events as defined by the threshold.
 I have a few issues with this plot being “duration,” as it’s just counts of hours above the threshold. These hours need not be continuous…which to me is what duration is all about. Anyway, we carry on.</p>
 <aside class="margin sidebar">
@@ -1984,7 +2435,7 @@ I have a few issues with this plot being “duration,” as it’s just counts o
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">adjusted_heatmap_palette</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">value</span><span class="p">))</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">flood_hours_per_year</span><span class="p">[</span><span class="s1">&#39;flood_hours_count&#39;</span><span class="p">]]</span>
 
 <span class="c1"># Plotting with the adjusted settings</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;year_storm&#39;</span><span class="p">,</span> 
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;flood_hours_count&#39;</span><span class="p">,</span> 
@@ -2015,30 +2466,30 @@ I have a few issues with this plot being “duration,” as it’s just counts o
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<img alt="../_images/516c1b77ddc03040bd55cca958253e1c7e2dbec685bbe31856543ae692d05551.png" src="../_images/516c1b77ddc03040bd55cca958253e1c7e2dbec685bbe31856543ae692d05551.png" />
+<img alt="../_images/1c236b6c0fa7a0a1c119379b8ea359c562002554d7564651363ffa4850162594.png" src="../_images/1c236b6c0fa7a0a1c119379b8ea359c562002554d7564651363ffa4850162594.png" />
 </div>
 </details>
 </div>
 <figure class="align-default" id="fig-duration">
-<img alt="../_images/516c1b77ddc03040bd55cca958253e1c7e2dbec685bbe31856543ae692d05551.png" src="../_images/516c1b77ddc03040bd55cca958253e1c7e2dbec685bbe31856543ae692d05551.png" />
+<img alt="../_images/1c236b6c0fa7a0a1c119379b8ea359c562002554d7564651363ffa4850162594.png" src="../_images/1c236b6c0fa7a0a1c119379b8ea359c562002554d7564651363ffa4850162594.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Average flood duration in hours above a threshold of <span class="pasted-text">30.000</span> cm per year at <span class="pasted-text">Malakal</span>,<span class="pasted-text">Palau</span> tide gauge from <span class="pasted-text">datetime.datetime(1983, 1, 1, 0, 0)</span> to <span class="pasted-text">datetime.datetime(2022, 11, 14, 0, 0)</span>.</span><a class="headerlink" href="#fig-duration" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Average flood duration in hours above a threshold of <span class="pasted-text">30.000</span> cm per year at <span class="pasted-text">Malakal</span>,<span class="pasted-text">Palau</span> tide gauge from <span class="pasted-text">1983-01-01</span> to <span class="pasted-text">2022-11-14</span>.</span><a class="headerlink" href="#fig-duration" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="calculate-the-percent-change-over-por-at-the-tide-station-for-both-frequency-and-duration">
-<h2><span class="section-number">2.3. </span>Calculate the percent change over POR at the tide station for both frequency and duration.<a class="headerlink" href="#calculate-the-percent-change-over-por-at-the-tide-station-for-both-frequency-and-duration" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>Calculate the percent change over POR at the tide station for both frequency and duration.<a class="headerlink" href="#calculate-the-percent-change-over-por-at-the-tide-station-for-both-frequency-and-duration" title="Permalink to this heading">#</a></h2>
 <p>Calculate the percent change over POR at the tide station/s, for both Frequency and Duration – TABLE</p>
 </section>
 <section id="create-a-map">
-<h2><span class="section-number">2.4. </span>Create a map<a class="headerlink" href="#create-a-map" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>Create a map<a class="headerlink" href="#create-a-map" title="Permalink to this heading">#</a></h2>
 <p>Create a Map with an icon/s depicting percent change over POR at the tide station/s, for both Frequency and Duration - MAP</p>
 <hr class="docutils" />
 </section>
 <hr class="docutils" />
 <section id="citations">
-<h2><span class="section-number">2.5. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
 <div class="docutils container" id="id3">
 <div class="citation" id="id5" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">SPM+14</a><span class="fn-bracket">]</span></span>
@@ -2109,24 +2560,26 @@ I have a few issues with this plot being “duration,” as it’s just counts o
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">2.1. Setup</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-necessary-libraries">2.1.1. Import necessary libraries.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieve-the-tide-station-s-data-set-s">2.1.2. Retrieve the Tide Station(s) Data Set(s)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-datum-to-mhhw">2.1.3. Set the Datum to MHHW</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assess-station-data-quality-for-the-por-1983-2022">2.1.4. Assess Station Data Quality for the POR (1983-2022)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-epoch-for-the-flood-frequency-analysis">2.1.4.1. Identify epoch for the flood frequency analysis</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-the-data-from-calendar-year-to-storm-year">2.1.5. Adjust the data from calendar year to storm year</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-a-threshold">2.1.6. Assign a Threshold</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieve-the-tide-station-s-data-set-s">2.2. Retrieve the Tide Station(s) Data Set(s)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-datum-to-mhhw">2.2.1. Set the Datum to MHHW</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assess-station-data-quality-for-the-por-1983-2022">2.2.2. Assess Station Data Quality for the POR (1983-2022)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-epoch-for-the-flood-frequency-analysis">2.2.2.1. Identify epoch for the flood frequency analysis</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-and-plot-flood-frequency">2.2. Calculate and Plot Flood Frequency</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-flood-frequency-counts">2.2.1. Plot Flood Frequency Counts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-flood-duration">2.2.2. Plot Flood Duration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-the-data-from-calendar-year-to-storm-year">2.2.3. Adjust the data from calendar year to storm year</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-a-threshold">2.2.4. Assign a Threshold</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-percent-change-over-por-at-the-tide-station-for-both-frequency-and-duration">2.3. Calculate the percent change over POR at the tide station for both frequency and duration.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-map">2.4. Create a map</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">2.5. Citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-and-plot-flood-frequency">2.3. Calculate and Plot Flood Frequency</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-flood-frequency-counts">2.3.1. Plot Flood Frequency Counts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-flood-duration">2.3.2. Plot Flood Duration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-percent-change-over-por-at-the-tide-station-for-both-frequency-and-duration">2.4. Calculate the percent change over POR at the tide station for both frequency and duration.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-map">2.5. Create a map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">2.6. Citations</a></li>
 </ul>
   </nav></div>
 
