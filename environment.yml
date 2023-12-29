@@ -10,3 +10,5 @@ dependencies:
   - seaborn
   - cartopy
   - jupyter-book
+  - pip:
+    - copernicus-marine-client
