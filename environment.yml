@@ -10,5 +10,6 @@ dependencies:
   - seaborn
   - cartopy
   - jupyter-book
+  - netcdf4
   - pip:
     - copernicus-marine-client
