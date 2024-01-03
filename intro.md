@@ -22,11 +22,12 @@
   - #### [Indicator: Minor Flood Frequency](/path/to/notebook.ipynb)
   - #### [Indicator: Flood Duration](/path/to/notebook.ipynb) -->
 
-# Welcome
+# Hindcast/Climatology
 
 This page isn't completely necessary at the moment, but there needs to be a landing page of some sort. I am working off the structure from this file: https://docs.google.com/document/d/1KHW-qCsDaAitDBfi_gG_XVEEGga2ZMdp/edit
 
-Here's what's in the book:
+Much of the code was produced with the aid of AI, including Copilot and chatGPT. So yes, putting a copyright on this seems somewhat silly, but here we are.
+
 
 
 
